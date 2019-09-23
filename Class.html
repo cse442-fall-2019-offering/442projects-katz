@@ -1,205 +1,338 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <title>Class</title>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
-  <style>
-
-    .carousel-inner img {
-      width: 100%; /* Set width to 100% */
-      min-height: 200px;
-    }
-
-    /* Hide the carousel text when the screen is less than 600 pixels wide */
-    @media (max-width: 600px) {
-      .carousel-caption {
-        display: none;
-      }
-    }
-  </style>
+    <title>Class</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+    <script>
+        $(document).ready(function(){
+        $(".nav-tabs a").click(function(){
+        $(this).tab('show');
+        });
+        });
+    </script>
 </head>
 <body>
 
-<nav class="navbar navbar-inverse">
-  <div class="container-fluid">
-    <div class="navbar-header">
-      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-      </button>
-      <a class="navbar-brand" href="#">CSE442</a>
+
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo03" aria-controls="navbarTogglerDemo03" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <a class="navbar-brand" href="#">CSE441</a>
+
+    <div class="collapse navbar-collapse" id="navbarTogglerDemo03">
+        <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+            <li class="nav-item">
+                <a class="nav-link" href="#">Home</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#">Classes</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#">My Profile</a>
+            </li>
+            <form class="form-inline my-2 my-lg-0">
+                <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+                <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+            </form>
+        </ul>
+        <a href="#" class="btn btn-info" role="button">Logout</a>
     </div>
-    <div class="collapse navbar-collapse" id="myNavbar">
-      <ul class="nav navbar-nav">
-        <li><a href="#">Home</a></li>
-        <li><a href="#">Classes</a></li>
-        <li><a href="#"><span class="glyphicon glyphicon-user"></span> My Profile</a></li>
-      </ul>
-      <ul class="nav navbar-nav navbar-right">
-          <li><a href="#"><span class="glyphicon glyphicon-log-in"></span> Logout</a></li>
-      </ul>
-      <ul class="nav navbar-nav navbar-right">
-        <form class="navbar-form navbar-right" role="search">
-        <div class="form-group input-group">
-          <input type="text" class="form-control" placeholder="Search..">
-          <span class="input-group-btn">
-            <button class="btn btn-default" type="button">
-              <span class="glyphicon glyphicon-search"></span>
-            </button>
-          </span>
-        </div>
-      </form>
-      </ul>
-    </div>
-  </div>
 </nav>
 
 <div class="container">
     <div class="row">
-        <h1><center>Class CSE442</center></h1>
+        <div class="col-sm-4">
+        </div>
+        <div class="col-sm-4">
+            <h1><center>Class CSE442</center></h1>
+        </div>
+        <div class="col-sm-4">
+        </div>
     </div>
 </div>
+
 <div class="container">
+    <div class="row">
+        <div class="col-sm-3">
+            <img src="download.jpg" class="img-responsive" alt="Cinque Terre">
+            <hr>
+            <p>Lecturer: Mathhew Hurts</p>
+            <p>Website: wgrfhiubrgfhiub.com</p>
+            <p>Times: MWF 800-850 am</p>
+            <p>Contact: 716 243 3784</p>
+        </div>
+        <div class="col-sm-9">
+            <p>Why won't the gullible curve soil the community affair? When can the closest poke snack against the panic? A graduated scotch spends a whale. A predecessor persecutes the rattled collective. A grandfather butters the incomprehensible jam beneath the distress. A citizen scans the blast.
+                The overnight trash shines without a desert. The dangerous bullet tags a sunny violence. The gutter tackles a rip. The intermediate eater fusses the magnetic hypothesis.
+                My peer argues in the weekday! The liberal fishes my pathetic opponent throughout the geometry. The boot reflects in the excess! The salt purges under the sniff. The analyst disgusts a paint across a wicked neighborhood.
+                Behind a padded physicist hums the blocked pain. A desirable autumn
+                explodes beside our squared coast. The incorporate dragon fumes near
+                a sterile calendar. After a camp boggles the constituent library. The
+                tree labels our look. The realizing follower raves past the reporter.The assistant rockets on top of the undesirable. A desire speaks opposite the stiff! Beneath an untrue weasel thirsts every rumored ribbon. The legend recovers! The designer pedant sighs.</p>
+            </div>
+        </div>
+    </div>
+    <hr>
+    <div class="container">
+        <ul class="nav nav-tabs nav-fill">
+            <li class="nav-item">
+                <a class="nav-link active" data-toggle="tab" href="#My_Team">My Team</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" data-toggle="tab" href="#Teams">Teams</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" data-toggle="tab" href="#People">People</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" data-toggle="tab" href="#Create_Team">Create Team</a>
+            </li>
+        </ul>
+    </div>
+</div>
+
+<div class="tab-content">
+<div id="My_Team" class="container tab-pane active"><br>
 <div class="row">
-  <div class="col-sm-8">
-    <p>Why won't the gullible curve soil the community affair? When can the closest poke snack against the panic? A graduated scotch spends a whale. A predecessor persecutes the rattled collective. A grandfather butters the incomprehensible jam beneath the distress. A citizen scans the blast.
+<div class="col-sm-3">
+<img src="download.jpg" class="img-responsive" alt="Cinque Terre">
+<hr>
+<form>
+<div class="form-group">
+<label for="email">Add Member</label>
+<input type="email" class="form-control" id="email" aria-describedby="emailHelp" placeholder="Enter email">
+<small id="emailHelp" class="form-text text-muted">Add wanted group members email here</small>
+</div>
+<button type="submit" class="btn btn-primary">Send Request</button>
+<hr>
+<div class="form-group">
+<label for="email1">Leave Group</label>
+<input class="form-control form-control-lg" type="text" id="CreateTeam" placeholder="Enter Leave Team">
+<small id="CreateTeam" class="form-text text-muted">Enter Leave Team in chat box to leave team</small>
+</div>
+<button type="submit" class="btn btn-primary">Leave Group</button>
+<hr>
+<div class="form-group">
+<label for="email">Kick Member</label>
+<input type="email" class="form-control" id="emailq" aria-describedby="emailHelp" placeholder="Enter email">
+<small id="emailHelp" class="form-text text-muted">Add gruop member's email you want to kick here</small>
+</div>
+<button type="submit" class="btn btn-primary">Kick Member</button>
+<hr>
+<button type="submit" class="btn btn-primary">Close Group</button>
+</form>
+</div>
+<div class="col-sm-7">
+<h1><center>Team No Loopholes</center></h1>
+<p>Why won't the gullible curve soil the community affair? When can the closest poke snack against the panic? A graduated scotch spends a whale. A predecessor persecutes the rattled collective. A grandfather butters the incomprehensible jam beneath the distress. A citizen scans the blast.
 The overnight trash shines without a desert. The dangerous bullet tags a sunny violence. The gutter tackles a rip. The intermediate eater fusses the magnetic hypothesis.
 My peer argues in the weekday! The liberal fishes my pathetic opponent throughout the geometry. The boot reflects in the excess! The salt purges under the sniff. The analyst disgusts a paint across a wicked neighborhood.
 Behind a padded physicist hums the blocked pain. A desirable autumn
-         explodes beside our squared coast. The incorporate dragon fumes near
-         a sterile calendar. After a camp boggles the constituent library. The
-         tree labels our look. The realizing follower raves past the reporter.The assistant rockets on top of the undesirable. A desire speaks opposite the stiff! Beneath an untrue weasel thirsts every rumored ribbon. The legend recovers! The designer pedant sighs.</p>
-  </div>
-  <div class="col-sm-4">
-       <p>Lecturer: Mathhew Hurts</p>
-       <p>Website wgrfhiubrgfhiub.com</p>
-       <p>Contact: 716 243 3784</p>
-    </div>
-  </div>
+explodes beside our squared coast. The incorporate dragon fumes near
+a sterile calendar. After a camp boggles the constituent library. The
+tree labels our look. The realizing follower raves past the reporter.The assistant rockets on top of the undesirable. A desire speaks opposite the stiff! Beneath an untrue weasel thirsts every rumored ribbon. The legend recovers! The designer pedant sighs.</p>
+<h4 class="border-bottom border-dark p-1">Skills Wanted</h4>
+<span class="badge badge-pill badge-info p-2 m-1">Python</span>
+<span class="badge badge-pill badge-info p-2 m-1">Java</span>
+<span class="badge badge-pill badge-info p-2 m-1">Networking</span>
+<span class="badge badge-pill badge-info p-2 m-1">Pooping</span>
+<span class="badge badge-pill badge-info p-2 m-1">Peeing</span>
+<h4 class="border-bottom border-dark p-1">Roster</h4>
+<div class="card-group">
+<div class="card">
+<img src="download.jpg" class="card-img-top" alt="...">
+<div class="card-body">
+<h5 class="card-title">Person 1</h5>
+<p class="card-text">I Eat Poop for dinner and i engoy it greatly really its the best thing ever.</p>
+<span class="badge badge-pill badge-info p-2 m-1">Pooping</span>
+<span class="badge badge-pill badge-info p-2 m-1">Peeing</span><br><br>
+<a href="#" class="btn btn-primary">See Profile</a>
+</div>
+</div>
+<div class="card">
+<img src="download.jpg" class="card-img-top" alt="...">
+<div class="card-body">
+<h5 class="card-title">Person 2</h5>
+<p class="card-text">I Eat Poop for dinner and i engoy it greatly really its the best thing ever.</p>
+<span class="badge badge-pill badge-info p-2 m-1">Pooping</span>
+<span class="badge badge-pill badge-info p-2 m-1">Peeing</span><br><br>
+<a href="#" class="btn btn-primary">See Profile</a>
+</div>
+</div>
+<div class="card">
+<img src="download.jpg" class="card-img-top" alt="...">
+<div class="card-body">
+<h5 class="card-title">Person 3</h5>
+<p class="card-text">I Eat Poop for dinner and i engoy it greatly really its the best thing ever.</p>
+<span class="badge badge-pill badge-info p-2 m-1">Pooping</span>
+<span class="badge badge-pill badge-info p-2 m-1">Peeing</span><br><br>
+<a href="#" class="btn btn-primary">See Profile</a>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div id="Teams" class="container tab-pane active"><br>
+<div class="row">
+<div class="col-sm-4">
+</div>
+<div class="col-sm-3">
+<h3><center>Available Teams</center></h3>
+</div>
+<div class="col-sm-3">
 </div>
 <hr>
-
-<div class="container text-center">
-  <h2>Team Stuff</h2>
-  <br>
-  <div class="row">
-      <body data-spy="scroll" data-target="#myScrollspy" data-offset="20">
-
-        <div class="container">
-          <div class="row">
-            <nav class="col-sm-3" id="myScrollspy">
-              <ul class="nav nav-pills nav-stacked">
-                <li><a href="#Team1">Team 1</a></li>
-                <li><a href="#Team2">Team 2</a></li>
-                <li><a href="#Team3">Team 3</a></li>
-                <button type="button">Create Team</button>
-                ...
-              </ul>
-            </nav>
-            <div class="col-sm-9">
-              <div id="Team1">
-                <h1>Team 1</h1>
-                <p>explodes beside our squared coast. The incorporate dragon fumes near
-                a sterile calendar. After a camp boggles the constituent library. The
-                tree labels our look. The realizing follower raves past the reporter.The assistanthy won't the gullible curve soil the community affair? When can the closest poke snack against the panic? A graduated scotch spends a whale. A predecessor persecutes the rattled collective. A grandfather butters the incomprehensible jam beneath the distress. A citizen scans the blast.
-            The overnight trash shines without a desert. The dangerous bullet tags a sunny violence. The gutter tackles a rip. The intermediate eater fusses the magnetic hypothesis.
-            My peer argues in the weekday! The liberal fishes my pathetic opponent throughout the geometry. The boot reflects in the excess! The salt purges under the sniff. The analyst disgusts a paint across a wicked neighborhood.
-            Behind a padded physicist hums the blocked pain. A desirable autumn
-                     explodes beside our squared coast. The incorporate dragon fumes near
-                     a sterile calendar. After a camp boggles the constituent library. The
-                     tree labels our look. The realizing followe</p>
-              </div>
-              <div id="Team2">
-                <h1>Team 2</h1>
-                <p>explodes beside our squared coast. The incorporate dragon fumes near
-                a sterile calendar. After a camp boggles the constituent library. The
-                tree labels our look. The realizing follower raves past the reporter.The assistanthy won't the gullible curve soil the community affair? When can the closest poke snack against the panic? A graduated scotch spends a whale. A predecessor persecutes the rattled collective. A grandfather butters the incomprehensible jam beneath the distress. A citizen scans the blast.
-            The overnight trash shines without a desert. The dangerous bullet tags a sunny violence. The gutter tackles a rip. The intermediate eater fusses the magnetic hypothesis.
-            My peer argues in the weekday! The liberal fishes my pathetic opponent throughout the geometry. The boot reflects in the excess! The salt purges under the sniff. The analyst disgusts a paint across a wicked neighborhood.
-            Behind a padded physicist hums the blocked pain. A desirable autumn
-                     explodes beside our squared coast. The incorporate dragon fumes near
-                     a sterile calendar. After a camp boggles the constituent library. The
-                     tree labels our look. The realizing followe</p>
-              </div>
-              <div id="Team3">
-                <h1>Team 3</h1>
-                <p>explodes beside our squared coast. The incorporate dragon fumes near
-                a sterile calendar. After a camp boggles the constituent library. The
-                tree labels our look. The realizing follower raves past the reporter.The assistanthy won't the gullible curve soil the community affair? When can the closest poke snack against the panic? A graduated scotch spends a whale. A predecessor persecutes the rattled collective. A grandfather butters the incomprehensible jam beneath the distress. A citizen scans the blast.
-            The overnight trash shines without a desert. The dangerous bullet tags a sunny violence. The gutter tackles a rip. The intermediate eater fusses the magnetic hypothesis.
-            My peer argues in the weekday! The liberal fishes my pathetic opponent throughout the geometry. The boot reflects in the excess! The salt purges under the sniff. The analyst disgusts a paint across a wicked neighborhood.
-            Behind a padded physicist hums the blocked pain. A desirable autumn
-                     explodes beside our squared coast. The incorporate dragon fumes near
-                     a sterile calendar. After a camp boggles the constituent library. The
-                     tree labels our look. The realizing followe</p>
-              </div>
-
-              </div>
-              ...
-            </div>
-          </div>
-          <div class="container">
-            <div class="row">
-              <nav class="col-sm-3" id="myScrollspy">
-                <ul class="nav nav-pills nav-stacked">
-                  <li><a href="#Studdent1">Studdent 1</a></li>
-                  <li><a href="#Studdent2">Studdent 2</a></li>
-                  <li><a href="#Studdent3">Studdent 3</a></li>
-                  ...
-                </ul>
-              </nav>
-              <div class="col-sm-9">
-                <div id="Studdent1">
-                  <h1>Studdent 1</h1>
-                  <p>explodes beside our squared coast. The incorporate dragon fumes near
-                  a sterile calendar. After a camp boggles the constituent library. The
-                  tree labels our look. The realizing follower raves past the reporter.The assistanthy won't the gullible curve soil the community affair? When can the closest poke snack against the panic? A graduated scotch spends a whale. A predecessor persecutes the rattled collective. A grandfather butters the incomprehensible jam beneath the distress. A citizen scans the blast.
-              The overnight trash shines without a desert. The dangerous bullet tags a sunny violence. The gutter tackles a rip. The intermediate eater fusses the magnetic hypothesis.
-              My peer argues in the weekday! The liberal fishes my pathetic opponent throughout the geometry. The boot reflects in the excess! The salt purges under the sniff. The analyst disgusts a paint across a wicked neighborhood.
-              Behind a padded physicist hums the blocked pain. A desirable autumn
-                       explodes beside our squared coast. The incorporate dragon fumes near
-                       a sterile calendar. After a camp boggles the constituent library. The
-                       tree labels our look. The realizing followe</p>
-                </div>
-                <div id="Studdent2">
-                  <h1>Studdent 2</h1>
-                  <p>explodes beside our squared coast. The incorporate dragon fumes near
-                  a sterile calendar. After a camp boggles the constituent library. The
-                  tree labels our look. The realizing follower raves past the reporter.The assistanthy won't the gullible curve soil the community affair? When can the closest poke snack against the panic? A graduated scotch spends a whale. A predecessor persecutes the rattled collective. A grandfather butters the incomprehensible jam beneath the distress. A citizen scans the blast.
-              The overnight trash shines without a desert. The dangerous bullet tags a sunny violence. The gutter tackles a rip. The intermediate eater fusses the magnetic hypothesis.
-              My peer argues in the weekday! The liberal fishes my pathetic opponent throughout the geometry. The boot reflects in the excess! The salt purges under the sniff. The analyst disgusts a paint across a wicked neighborhood.
-              Behind a padded physicist hums the blocked pain. A desirable autumn
-                       explodes beside our squared coast. The incorporate dragon fumes near
-                       a sterile calendar. After a camp boggles the constituent library. The
-                       tree labels our look. The realizing followe</p>
-                </div>
-                <div id="Studdent3">
-                  <h1>Studdent 3</h1>
-                  <p>explodes beside our squared coast. The incorporate dragon fumes near
-                  a sterile calendar. After a camp boggles the constituent library. The
-                  tree labels our look. The realizing follower raves past the reporter.The assistanthy won't the gullible curve soil the community affair? When can the closest poke snack against the panic? A graduated scotch spends a whale. A predecessor persecutes the rattled collective. A grandfather butters the incomprehensible jam beneath the distress. A citizen scans the blast.
-              The overnight trash shines without a desert. The dangerous bullet tags a sunny violence. The gutter tackles a rip. The intermediate eater fusses the magnetic hypothesis.
-              My peer argues in the weekday! The liberal fishes my pathetic opponent throughout the geometry. The boot reflects in the excess! The salt purges under the sniff. The analyst disgusts a paint across a wicked neighborhood.
-              Behind a padded physicist hums the blocked pain. A desirable autumn
-                       explodes beside our squared coast. The incorporate dragon fumes near
-                       a sterile calendar. After a camp boggles the constituent library. The
-                       tree labels our look. The realizing followe</p>
-                </div>
-
-                </div>
-                ...
-              </div>
-            </div>
-        </div>
-
-      </body>
-    </div>
-
+<div class="card-columns">
+<div class="card">
+<img src="download.jpg" class="card-img-top" alt="...">
+<div class="card-body">
+<h5 class="card-title">Team 1</h5>
+<p class="card-text">I Eat Poop for dinner and i engoy it greatly really its the best thing ever.</p>
+<p>Skills Wanted:</p>
+<span class="badge badge-pill badge-info p-2 m-1">Pooping</span>
+<span class="badge badge-pill badge-info p-2 m-1">Peeing</span><br><br>
+<p>Email: wfdwdsf@grewdf.com</p>
 </div>
+</div>
+<div class="card">
+<img src="download.jpg" class="card-img-top" alt="...">
+<div class="card-body">
+<h5 class="card-title">Team 1</h5>
+<p class="card-text">I Eat Poop for dinner and i engoy it greatly really its the best thing ever.</p>
+<p>Skills Wanted:</p>
+<span class="badge badge-pill badge-info p-2 m-1">Pooping</span>
+<span class="badge badge-pill badge-info p-2 m-1">Peeing</span><br><br>
+<p>Email: wfdwdsf@grewdf.com</p>
+</div>
+</div>
+<div class="card">
+<img src="download.jpg" class="card-img-top" alt="...">
+<div class="card-body">
+<h5 class="card-title">Team 1</h5>
+<p class="card-text">I Eat Poop for dinner and i engoy it greatly really its the best thing ever.</p>
+<p>Skills Wanted:</p>
+<span class="badge badge-pill badge-info p-2 m-1">Pooping</span>
+<span class="badge badge-pill badge-info p-2 m-1">Peeing</span><br><br>
+<p>Email: wfdwdsf@grewdf.com</p>
+</div>
+</div>
+<div class="card">
+<img src="download.jpg" class="card-img-top" alt="...">
+<div class="card-body">
+<h5 class="card-title">Team 1</h5>
+<p class="card-text">I Eat Poop for dinner and i engoy it greatly really its the best thing ever.</p>
+<p>Skills Wanted:</p>
+<span class="badge badge-pill badge-info p-2 m-1">Pooping</span>
+<span class="badge badge-pill badge-info p-2 m-1">Peeing</span><br><br>
+<p>Email: wfdwdsf@grewdf.com</p>
+</div>
+</div>
+<div class="card">
+<img src="download.jpg" class="card-img-top" alt="...">
+<div class="card-body">
+<h5 class="card-title">Team 1</h5>
+<p class="card-text">I Eat Poop for dinner and i engoy it greatly really its the best thing ever.</p>
+<p>Skills Wanted:</p>
+<span class="badge badge-pill badge-info p-2 m-1">Pooping</span>
+<span class="badge badge-pill badge-info p-2 m-1">Peeing</span><br><br>
+<p>Email: wfdwdsf@grewdf.com</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div id="People" class="tab-pane fade">
+<div class="row">
+<div class="col-sm-4">
+</div>
+<div class="col-sm-3">
+<h3><center>Available Teams</center></h3>
+</div>
+<div class="col-sm-3">
+</div>
+<hr>
+<div class="card-columns">
+<div class="card">
+<img src="download.jpg" class="card-img-top" alt="...">
+<div class="card-body">
+<h5 class="card-title">Team 1</h5>
+<p class="card-text">I Eat Poop for dinner and i engoy it greatly really its the best thing ever.</p>
+<p>Skills Wanted:</p>
+<span class="badge badge-pill badge-info p-2 m-1">Pooping</span>
+<span class="badge badge-pill badge-info p-2 m-1">Peeing</span><br><br>
+<p>Email: wfdwdsf@grewdf.com</p>
+</div>
+</div>
+<div class="card">
+<img src="download.jpg" class="card-img-top" alt="...">
+<div class="card-body">
+<h5 class="card-title">Team 1</h5>
+<p class="card-text">I Eat Poop for dinner and i engoy it greatly really its the best thing ever.</p>
+<p>Skills Wanted:</p>
+<span class="badge badge-pill badge-info p-2 m-1">Pooping</span>
+<span class="badge badge-pill badge-info p-2 m-1">Peeing</span><br><br>
+<p>Email: wfdwdsf@grewdf.com</p>
+</div>
+</div>
+<div class="card">
+<img src="download.jpg" class="card-img-top" alt="...">
+<div class="card-body">
+<h5 class="card-title">Team 1</h5>
+<p class="card-text">I Eat Poop for dinner and i engoy it greatly really its the best thing ever.</p>
+<p>Skills Wanted:</p>
+<span class="badge badge-pill badge-info p-2 m-1">Pooping</span>
+<span class="badge badge-pill badge-info p-2 m-1">Peeing</span><br><br>
+<p>Email: wfdwdsf@grewdf.com</p>
+</div>
+</div>
+<div class="card">
+<img src="download.jpg" class="card-img-top" alt="...">
+<div class="card-body">
+<h5 class="card-title">Team 1</h5>
+<p class="card-text">I Eat Poop for dinner and i engoy it greatly really its the best thing ever.</p>
+<p>Skills Wanted:</p>
+<span class="badge badge-pill badge-info p-2 m-1">Pooping</span>
+<span class="badge badge-pill badge-info p-2 m-1">Peeing</span><br><br>
+<p>Email: wfdwdsf@grewdf.com</p>
+</div>
+</div>
+<div class="card">
+<img src="download.jpg" class="card-img-top" alt="...">
+<div class="card-body">
+<h5 class="card-title">Team 1</h5>
+<p class="card-text">I Eat Poop for dinner and i engoy it greatly really its the best thing ever.</p>
+<p>Skills Wanted:</p>
+<span class="badge badge-pill badge-info p-2 m-1">Pooping</span>
+<span class="badge badge-pill badge-info p-2 m-1">Peeing</span><br><br>
+<p>Email: wfdwdsf@grewdf.com</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div id="Create_Team" class="tab-pane fade">
+<div class="container">
+<div class="row">
+<form>
+<div class="form-group">
+<h2><label for="CreateTeam">Team Creation</label></h2>
+<input class="form-control form-control-lg" type="text" id="CreateTeam" placeholder="Enter team name">
+</div>
+<button type="submit" class="btn btn-primary">Create</button>
+</form>
+</div>
+</div>
+</div>
+</div>
+
+</body>
 
 </html>
