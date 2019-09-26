@@ -4,21 +4,27 @@
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-    
     <title>Igor Kuzmich</title>
+
+    <!--Personal style sheet, only contains profile pic size for now.-->
     <link rel="stylesheet" href="style.css">
   </head>
+
   <body class="bg-light">
+
+    <!--Big Menu up on top contains student profile info-->
     <div class="jumbotron bg-light jumbotron-fluid">
         <div class="container-fluid d-flex justify-content-start flex-wrap">
+            <!--Student Profile Photo-->
             <img src="stock-student-photo.jpg" alt="Profile Picture" class="img-fluid img-thumbnail profile-pic" height="200px" width="150px">
+            <!--Student Information-->
             <div class="align-self-baseline">
                 <div class="container-fluid d-flex flex-column">
                     <h1><span class="badge badge-dark">Igor Kuzmich</span></h1>
                     <h2 class="border-bottom border-dark p-1">Schools</h2>
+                    <!--Student Schools listed as cards-->
                     <div class="container-fluid d-flex flex-row flex-wrap">
                         <div class="card m-1" style="width: 18rem;">
                             <div class="card-body">
@@ -35,6 +41,7 @@
                             </div>
                         </div>
                     </div>
+                    <!--Student Skills listed as badges-->
                     <h2 class="border-bottom border-dark p-1">Skills</h2>
                     <div class="container-fluid d-flex flex-row flex-wrap">
                         <span class="badge badge-pill badge-info p-2 m-1">Python</span>
@@ -46,7 +53,9 @@
         </div>
     </div>
 
+    <!--Tab list: Done straigt on javascript-->
     <div class="container-fluid bg-light">
+        <!--Clickable Tabs on top, link to tab content via href to content id-->
         <ul class="nav nav-tabs justify-content-center" id="myTab" role="tablist">
             <li class="nav-item">
                 <a class="nav-link active" id="courses-tab" data-toggle="tab" href="#courses" role="tab" aria-controls="courses" aria-selected="true">Courses</a>
@@ -55,10 +64,13 @@
                 <a class="nav-link" id="teams-tab" data-toggle="tab" href="#teams" role="tab" aria-controls="teams" aria-selected="false">Teams</a>
             </li>
         </ul>
+        <!--Tab Conent: Whats contained in each tab-->
         <div class="tab-content" id="myTabContent">
+            <!--Courses Tab-->
             <div class="tab-pane fade show active" id="courses" role="tabpanel" aria-labelledby="courses-tab">
                 <div class="container-fluid d-flex flex-row flex-wrap">
                     <a href="#">
+                        <!--Courses listed as cards-->
                         <div class="card m-1" style="width: 18rem;">
                             <div class="card-body">
                                 <h5 class="card-title">Software Engineering</h5>
@@ -76,8 +88,10 @@
                     </a>
                 </div>
             </div>
+            <!--Teams Tab-->
             <div class="tab-pane fade" id="teams" role="tabpanel" aria-labelledby="teams-tab">
                 <div class="container-fluid d-flex flex-row flex-wrap">
+                    <!--Teams done as cards-->
                     <div class="card m-1" style="width: 18rem;">
                             <div class="card-body">
                                 <h5 class="card-title">Team Katz</h5>
