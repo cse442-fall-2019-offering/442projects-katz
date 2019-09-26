@@ -6,6 +6,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script>
+        $(document).ready(function(){
+        $(".nav-tabs a").click(function(){
+        $(this).tab('show');
+        });
+        });
+    </script>
     <title>Igor Kuzmich</title>
 
     <!--Personal style sheet, only contains profile pic size for now.-->
@@ -13,7 +21,29 @@
   </head>
 
   <body class="bg-light">
-
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo03" aria-controls="navbarTogglerDemo03" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+    
+    
+        <div class="collapse navbar-collapse" id="navbarTogglerDemo03">
+            <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+                <form class="form-inline my-2 my-lg-0">
+                    <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+                    <button class="btn btn-info" type="submit">Search</button>
+                </form>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Classes</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">My Profile</a>
+                </li>
+                
+            </ul>
+            <a href="Login.html" class="btn btn-info" role="button">Logout</a>
+        </div>
+    </nav>
     <!--Big Menu up on top contains student profile info-->
     <div class="jumbotron bg-light jumbotron-fluid">
         <div class="container-fluid d-flex justify-content-start flex-wrap">
@@ -30,24 +60,23 @@
                             <div class="card-body">
                                 <h5 class="card-title">SUNY at Buffalo</h5>
                                 <h6 class="card-subtitle mb-2 text-muted">2014-2019</h6>
-                                <a href="#" class="card-link">Website</a>
+                                <a href="http://www.buffalo.edu/" class="card-link">Website</a>
                             </div>
-                        </div>
-                        <div class="card m-1" style="width: 18rem;">
-                            <div class="card-body">
-                                <h5 class="card-title">SUNY at Buffalo</h5>
-                                <h6 class="card-subtitle mb-2 text-muted">2014-2019</h6>
-                                <a href="#" class="card-link">Website</a>
-                            </div>
-                        </div>
+                        </div>         
                     </div>
                     <!--Student Skills listed as badges-->
                     <h2 class="border-bottom border-dark p-1">Skills</h2>
                     <div class="container-fluid d-flex flex-row flex-wrap">
                         <span class="badge badge-pill badge-info p-2 m-1">Python</span>
                         <span class="badge badge-pill badge-info p-2 m-1">Java</span>
+                        <span class="badge badge-pill badge-info p-2 m-1">C++</span>
                         <span class="badge badge-pill badge-info p-2 m-1">Networking</span>
+                        <span class="badge badge-pill badge-info p-2 m-1">Team Work</span>
+                        <span class="badge badge-pill badge-info p-2 m-1">Basket Weaving</span>
+                        <span class="badge badge-pill badge-info p-2 m-1">Python</span>
+                        <span class="badge badge-pill badge-info p-2 m-1">Microcontrollers</span>
                     </div>
+                    
                 </div>
             </div>
         </div>
@@ -86,6 +115,22 @@
                             </div>
                         </div>
                     </a>
+                    <a href="#">
+                        <div class="card m-1" style="width: 18rem;">
+                            <div class="card-body">
+                                <h5 class="card-title">Intro to AI </h5>
+                                <h6 class="card-subtitle mb-2 text-muted">CSE 368</h6>
+                            </div>
+                        </div>
+                    </a>
+                    <a href="#">
+                        <div class="card m-1" style="width: 18rem;">
+                            <div class="card-body">
+                                <h5 class="card-title">Add Course</h5>
+                                <h6 class="card-subtitle mb-2 text-muted">More</h6>
+                            </div>
+                        </div>
+                    </a>
                 </div>
             </div>
             <!--Teams Tab-->
@@ -94,7 +139,7 @@
                     <!--Teams done as cards-->
                     <div class="card m-1" style="width: 18rem;">
                             <div class="card-body">
-                                <h5 class="card-title">Team Katz</h5>
+                                <h5 class="card-title">Team KATZ</h5>
                                 <h6 class="card-subtitle mb-2 text-muted">CSE 442</h6>
                                 <p class="card-text">4 Students</p>
                                 <a href="#" class="card-link">Team Link</a>
@@ -103,12 +148,12 @@
                     </div>
                     <div class="card m-1" style="width: 18rem;">
                         <div class="card-body">
-                            <h5 class="card-title">Team Katz</h5>
-                            <h6 class="card-subtitle mb-2 text-muted">CSE 442</h6>
-                            <p class="card-text">4 Students</p>
+                            <h5 class="card-title">Team HATZ</h5>
+                            <h6 class="card-subtitle mb-2 text-muted">CSE 368</h6>
+                            <p class="card-text">3 Students</p>
                             <a href="#" class="card-link">Team Link</a>
                             <a href="#" class="card-link">Class Link</a>
-                        </div>
+                        </div>                       
                     </div>
                 </div> 
             </div>
@@ -121,6 +166,7 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
   </body>
+  <!--Footer to have space at bottom - Just for looks-->
   <footer>
       <div class = "jumbotron bg-light jumbotron-fluid">
 
