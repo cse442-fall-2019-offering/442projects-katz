@@ -19,73 +19,30 @@
     <!--Personal style sheet, only contains profile pic size for now.-->
     <link rel="stylesheet" href="style.css">
   </head>
-
+  <!--Navigation Bar-->
   <body class="bg-light">
-      <!--Navigation Bar-->
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo03" aria-controls="navbarTogglerDemo03" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-        </button>    
-        <div class="collapse navbar-collapse" id="navbarTogglerDemo03">
-            <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
-                <form class="form-inline my-2 my-lg-0">
-                    <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
-                    <button class="btn btn-info" type="submit">Search</button>
-                </form>
-                <li class="nav-item">
-                        <a class="nav-link" href="mainpge.html">Home</a>
-                    </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="Class.html">Classes</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="profile.html">My Profile</a>
-                </li>
-                
-            </ul>
-            <a href="Login.html" class="btn btn-info" role="button">Logout</a>
-        </div>
-    </nav>
-    <!--Big Menu up on top contains student profile info-->
-    <div class="jumbotron bg-light jumbotron-fluid">
-        <div class="container-fluid d-flex justify-content-start flex-wrap">
-            <!--Student Profile Photo-->
-            <img src="stock-student-photo.jpg" alt="Profile Picture" class="img-fluid img-thumbnail profile-pic" height="200px" width="150px">
-            <!--Student Information-->
-            <div class="align-self-baseline">
-                <div class="container-fluid d-flex flex-column">
-                    <h1><span class="badge badge-dark">Igor Kuzmich</span></h1>
-                    <h2 class="border-bottom border-dark p-1">Schools</h2>
-                    <!--Student Schools listed as cards-->
-                    <div class="container-fluid d-flex flex-row flex-wrap">
-                        <div class="card m-1" style="width: 18rem;">
-                            <div class="card-body">
-                                <h5 class="card-title">SUNY at Buffalo</h5>
-                                <h6 class="card-subtitle mb-2 text-muted">2014-2019</h6>
-                                <a href="http://www.buffalo.edu/" class="card-link">Website</a>
-                            </div>
-                        </div>         
-                    </div>
-                    <!--Student Skills listed as badges-->
-                    <h2 class="border-bottom border-dark p-1">Skills</h2>
-                    <div class="container-fluid d-flex flex-row flex-wrap">
-                        <span class="badge badge-pill badge-info p-2 m-1">Python</span>
-                        <span class="badge badge-pill badge-info p-2 m-1">Java</span>
-                        <span class="badge badge-pill badge-info p-2 m-1">C++</span>
-                        <span class="badge badge-pill badge-info p-2 m-1">Networking</span>
-                        <span class="badge badge-pill badge-info p-2 m-1">Team Work</span>
-                        <span class="badge badge-pill badge-info p-2 m-1">Basket Weaving</span>
-                        <span class="badge badge-pill badge-info p-2 m-1">Python</span>
-                        <span class="badge badge-pill badge-info p-2 m-1">Microcontrollers</span>
-                    </div>
-                    
-                </div>
-            </div>
-        </div>
-    </div>
+        <nav class="navbar navbar-expand-md navbar-dark bg-dark sticky-top"  style="min-height: 54px; min-width:200px;">
+                <div class="container-fluid"style="min-height: 54px;" >
+                  <a class="navbar-brand" href="mainpge.html">K A T Z</a>
+                  <button class="navbar-toggler float-right" type="button" data-toggle="collapse" data-target="#navbarResponsive">
+                    <span class="navbar-toggler-icon"></span>
+                  </button>    <div class="collapse navbar-collapse" id="navbarResponsive">        <ul class="navbar-nav ml-auto mx-auto d-flex align-items-center">
+                        <li class="nav-item active">
+                          <a class="nav-link" href="mainpge.html">Home</a>
+                        </li>
+                        <li class="nav-item">
+                          <a class="nav-link" href="profile.html">My Profile</a>
+                        </li>
+                        <form class="form-inline my-2 my-lg-0">
+                            <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+                            <button class="btn btn-info" type="submit">Search</button>
+                        </form>
+                      </ul>        <a href="Login.html" class="btn btn-info pull-right" style="float: right;"role="button">Logout</a>
+                  </div>
+             </nav>
 
     <!--Tab list: Done straigt on javascript-->
-    <div class="container-fluid bg-light">
+    <div class="mt-4 container-fluid bg-light">
         <!--Clickable Tabs on top, link to tab content via href to content id-->
         <ul class="nav nav-tabs justify-content-center" id="myTab" role="tablist">
             <li class="nav-item">
@@ -100,36 +57,36 @@
             <!--Courses Tab-->
             <div class="tab-pane fade show active" id="courses" role="tabpanel" aria-labelledby="courses-tab">
                 <!--Courses listed as cards-->
-                <div class="container-fluid d-flex flex-row flex-wrap">
-                    <a href="Class.html">
-                        <div class="card m-1" style="width: 18rem;">
+                <div class="container-fluid d-flex justify-content-center flex-row flex-wrap">
+                    <div class="card m-1" style="width: 18rem;">
+                        <a href="Class.html">
                             <div class="card-body">
                                 <h5 class="card-title">Software Engineering</h5>
                                 <h6 class="card-subtitle mb-2 text-muted">CSE 442</h6>
                             </div>
-                        </div>
-                    </a>
-                    <a href="Class.html">
-                        <div class="card m-1" style="width: 18rem;">
+                        </a>
+                    </div>
+                    <div class="card m-1" style="width: 18rem;">
+                        <a href="Class.html">
                             <div class="card-body">
                                 <h5 class="card-title">Intro to Algorithms</h5>
                                 <h6 class="card-subtitle mb-2 text-muted">CSE 331</h6>
                             </div>
-                        </div>
-                    </a>
-                    <a href="Class.html">
-                        <div class="card m-1" style="width: 18rem;">
+                        </a>
+                    </div>
+                    <div class="card m-1" style="width: 18rem;">
+                        <a href="Class.html">
                             <div class="card-body">
                                 <h5 class="card-title">Intro to AI </h5>
                                 <h6 class="card-subtitle mb-2 text-muted">CSE 368</h6>
                             </div>
-                        </div>
-                    </a>
+                        </a>
+                    </div>
                 </div>
             </div>
             <!--Teams Tab-->
             <div class="tab-pane fade" id="teams" role="tabpanel" aria-labelledby="teams-tab">
-                <div class="container-fluid d-flex flex-row flex-wrap">
+                <div class="container-fluid justify-content-center d-flex flex-row flex-wrap">
                     <!--Teams done as cards-->
                     <div class="card m-1" style="width: 18rem;">
                             <div class="card-body">
