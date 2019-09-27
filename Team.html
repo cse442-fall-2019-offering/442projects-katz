@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Team</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+    <script>
+        $(document).ready(function(){
+        $(".nav-tabs a").click(function(){
+        $(this).tab('show');
+        });
+        });
+    </script>
+</head>
+<body>
+
+<!--Navbar of page-->
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo03" aria-controls="navbarTogglerDemo03" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <a class="navbar-brand" href="#">CSE442</a>
+
+    <div class="collapse navbar-collapse" id="navbarTogglerDemo03">
+        <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+            <li class="nav-item">
+                <a class="nav-link" href="mainpge.html">Home</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="profile.html">My Profile</a>
+            </li>
+            <form class="form-inline my-2 my-lg-0">
+                <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+                <button class="btn btn-info" type="submit">Search</button>
+            </form>
+        </ul>
+        <a href="#" class="btn btn-info" role="button">Logout</a>
+    </div>
+</nav>
+
+<div class="container">
+    <div class="row">
+        <div class="col-sm-3">
+            <br>
+            <br>
+            <br>
+            <img src="download.jpg" class="img-responsive" alt="Team Picture">
+            <hr>
+
+            <form>
+                <div class="form-group">
+                    <label for="email">Add Member</label>
+                    <input type="email" class="form-control" id="email" aria-describedby="emailHelp" placeholder="Enter email">
+                    <small id="emailHelp" class="form-text text-muted">Add wanted group members email here</small>
+                </div>
+                <button type="submit" class="btn btn-primary">Send Request</button>
+                <hr>
+                <div class="form-group">
+                    <label for="email1">Leave Group</label>
+                    <input class="form-control form-control-lg" type="text" id="CreateTeam" placeholder="Enter Leave Team">
+                    <small id="CreateTeam" class="form-text text-muted">Enter Leave Team in chat box to leave team</small>
+                </div>
+                <button type="submit" class="btn btn-primary">Leave Group</button>
+                <hr>
+                <div class="form-group">
+                    <label for="email">Kick Member</label>
+                    <input type="email" class="form-control" id="emailq" aria-describedby="emailHelp" placeholder="Enter email">
+                    <small id="emailHelp" class="form-text text-muted">Add gruop member's email you want to kick here</small>
+                </div>
+                <button type="submit" class="btn btn-primary">Kick Member</button>
+                <hr>
+                <button type="submit" class="btn btn-primary">Close Group</button>
+            </form>
+        </div>
+        <div class="col-sm-7">
+            <h1><center>Team No Loopholes</center></h1>
+            <!--project description-->
+            <p>Why won't the gullible curve soil the community affair? When can the closest poke snack against the panic? A graduated scotch spends a whale. A predecessor persecutes the rattled collective. A grandfather butters the incomprehensible jam beneath the distress. A citizen scans the blast.
+                The overnight trash shines without a desert. The dangerous bullet tags a sunny violence. The gutter tackles a rip. The intermediate eater fusses the magnetic hypothesis.
+                My peer argues in the weekday! The liberal fishes my pathetic opponent throughout the geometry. The boot reflects in the excess! The salt purges under the sniff. The analyst disgusts a paint across a wicked neighborhood.
+                Behind a padded physicist hums the blocked pain. A desirable autumn
+                explodes beside our squared coast. The incorporate dragon fumes near
+                a sterile calendar. After a camp boggles the constituent library. The
+                tree labels our look. The realizing follower raves past the reporter.The assistant rockets on top of the undesirable. A desire speaks opposite the stiff! Beneath an untrue weasel thirsts every rumored ribbon. The legend recovers! The designer pedant sighs.</p>
+                <!--skills-->
+                <h4 class="border-bottom border-dark p-1">Skills Wanted</h4>
+                <span class="badge badge-pill badge-info p-2 m-1">Python</span>
+                <span class="badge badge-pill badge-info p-2 m-1">Java</span>
+                <span class="badge badge-pill badge-info p-2 m-1">Networking</span>
+                <span class="badge badge-pill badge-info p-2 m-1">Pooping</span>
+                <span class="badge badge-pill badge-info p-2 m-1">Peeing</span>
+                <h4 class="border-bottom border-dark p-1">Roster</h4>
+                <!--People in Team-->
+                <div class="card-group">
+                    <div class="card">
+                        <img src="download.jpg" class="card-img-top" alt="Profile Picture">
+                        <div class="card-body">
+                            <h5 class="card-title">Person 1</h5>
+                            <p class="card-text">I Eat Poop for dinner and i engoy it greatly really its the best thing ever.</p>
+                            <span class="badge badge-pill badge-info p-2 m-1">Pooping</span>
+                            <span class="badge badge-pill badge-info p-2 m-1">Peeing</span><br><br>
+                            <a href="#" class="btn btn-primary">See Profile</a>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <img src="download.jpg" class="card-img-top" alt="Profile Picture">
+                        <div class="card-body">
+                            <h5 class="card-title">Person 2</h5>
+                            <p class="card-text">I Eat Poop for dinner and i engoy it greatly really its the best thing ever.</p>
+                            <span class="badge badge-pill badge-info p-2 m-1">Pooping</span>
+                            <span class="badge badge-pill badge-info p-2 m-1">Peeing</span><br><br>
+                            <a href="#" class="btn btn-primary">See Profile</a>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <img src="download.jpg" class="card-img-top" alt="Profile Picture">
+                        <div class="card-body">
+                            <h5 class="card-title">Person 3</h5>
+                            <p class="card-text">I Eat Poop for dinner and i engoy it greatly really its the best thing ever.</p>
+                            <span class="badge badge-pill badge-info p-2 m-1">Pooping</span>
+                            <span class="badge badge-pill badge-info p-2 m-1">Peeing</span><br><br>
+                            <a href="#" class="btn btn-primary">See Profile</a>
+                        </div>
+                    </div>
+                </div>
+        </div>
+    </div>
+</div>
+
+</body>
+
+</html>
