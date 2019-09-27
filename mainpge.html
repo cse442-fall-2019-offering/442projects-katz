@@ -19,31 +19,27 @@
     <!--Personal style sheet, only contains profile pic size for now.-->
     <link rel="stylesheet" href="style.css">
   </head>
-
+  <!--Navigation Bar-->
   <body class="bg-light">
-      <!--Navigation Bar-->
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo03" aria-controls="navbarTogglerDemo03" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-        </button>    
-        <div class="collapse navbar-collapse" id="navbarTogglerDemo03">
-            <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
-                <form class="form-inline my-2 my-lg-0">
-                    <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
-                    <button class="btn btn-info" type="submit">Search</button>
-                </form>
-                <li class="nav-item">
-                        <a class="nav-link" href="mainpge.html">Home</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="profile.html">My Profile</a>
-                </li>
-                
-            </ul>
-            <a href="Login.html" class="btn btn-info" role="button">Logout</a>
-        </div>
-    </nav>
-    <!--Creats Space from the top-->
+        <nav class="navbar navbar-expand-md navbar-dark bg-dark sticky-top"  style="min-height: 54px; min-width:200px;">
+                <div class="container-fluid"style="min-height: 54px;" >
+                  <a class="navbar-brand" href="mainpge.html">K A T Z</a>
+                  <button class="navbar-toggler float-right" type="button" data-toggle="collapse" data-target="#navbarResponsive">
+                    <span class="navbar-toggler-icon"></span>
+                  </button>    <div class="collapse navbar-collapse" id="navbarResponsive">        <ul class="navbar-nav ml-auto mx-auto d-flex align-items-center">
+                        <li class="nav-item active">
+                          <a class="nav-link" href="mainpge.html">Home</a>
+                        </li>
+                        <li class="nav-item">
+                          <a class="nav-link" href="profile.html">My Profile</a>
+                        </li>
+                        <form class="form-inline my-2 my-lg-0">
+                            <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+                            <button class="btn btn-info" type="submit">Search</button>
+                        </form>
+                      </ul>        <a href="Login.html" class="btn btn-info pull-right" style="float: right;"role="button">Logout</a>
+                  </div>
+             </nav>
 
     <!--Tab list: Done straigt on javascript-->
     <div class="mt-4 container-fluid bg-light">
@@ -61,7 +57,7 @@
             <!--Courses Tab-->
             <div class="tab-pane fade show active" id="courses" role="tabpanel" aria-labelledby="courses-tab">
                 <!--Courses listed as cards-->
-                <div class="container-fluid d-flex flex-row flex-wrap">
+                <div class="container-fluid d-flex justify-content-center flex-row flex-wrap">
                     <div class="card m-1" style="width: 18rem;">
                         <a href="Class.html">
                             <div class="card-body">
@@ -90,7 +86,7 @@
             </div>
             <!--Teams Tab-->
             <div class="tab-pane fade" id="teams" role="tabpanel" aria-labelledby="teams-tab">
-                <div class="container-fluid d-flex flex-row flex-wrap">
+                <div class="container-fluid justify-content-center d-flex flex-row flex-wrap">
                     <!--Teams done as cards-->
                     <div class="card m-1" style="width: 18rem;">
                             <div class="card-body">
