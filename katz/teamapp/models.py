@@ -1,5 +1,6 @@
 from django.db import models
 from django.contrib.auth.models import User
+from django.urls import reverse
 
 class School(models.Model):
     name = models.CharField(primary_key=True, max_length=255,help_text='Enter school_name',unique=True)
@@ -27,6 +28,9 @@ class Class(models.Model):
 
     class Meta:
         unique_together = (("name","school","start_time","end_time","professor_name"),)
+
+    def get_absolute_url(self):
+        return reverse('classpage', args=[str(self.id)])
 
 class Team(models.Model):
     in_class = models.ForeignKey(Class, on_delete=models.CASCADE)
