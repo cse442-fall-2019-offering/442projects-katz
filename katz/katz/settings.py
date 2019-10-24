@@ -37,7 +37,8 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'teamapp.apps.TeamappConfig',
+    'teamapp',
+    'users.apps.UsersConfig',
 ]
 
 MIDDLEWARE = [
