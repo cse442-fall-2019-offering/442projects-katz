@@ -1,0 +1,147 @@
+{% extends 'generic.html' %}
+
+{% block body %}
+<!--Class Title on top of center of page-->
+<div class="container">
+        <div class="row">
+            <div class="col-sm-4">
+            </div>
+            <div class="col-sm-4">
+                <h1><center>{{classOfId.name}}</center></h1>
+            </div>
+            <div class="col-sm-4">
+            </div>
+        </div>
+    </div>
+    
+    
+    <!--
+    Holds Class image on left with contact info below
+    Also has a paragraph about the page.
+    -->
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-3">
+                <div class="card">
+                    <img src="download.jpg" class="card-img-top" alt="Class Picture">
+                </div>
+                <hr>
+                <p>Lecturer: {{classOfId.professor_name}}</p>
+                <p>Website: wgrfhiubrgfhiub.com</p>
+                <p>Times: {{ classOfId.start_time }} - {{ classOfId.end_time }} </p>
+                <p>Contact: 716 243 3784</p>
+            </div>
+            <div class="col-sm-9">
+                <p>{{classOfId.class_info}}</p>
+            </div>
+        </div>
+    </div>
+    <hr>
+    
+    <!--
+    Tab bar containg 4 pages to swap between with below the CLass info
+    -Team view/Available Teams/Available People/Create a Team
+    -->
+    <div class="container">
+        <ul class="nav nav-tabs nav-fill">
+            <li class="nav-item">
+                <a class="nav-link active" data-toggle="tab" href="#Teams">Avaliable Teams</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" data-toggle="tab" href="#People">People</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" data-toggle="tab" href="#Create_Team">Create Team</a>
+            </li>
+        </ul>
+    </div>
+    
+    
+    <!--The 4 Tabs are here-->
+    <div class="tab-content">
+        <!--Available Teams tab-->
+        <div id="Teams" class="container tab-pane active"><br>
+            <div class="row">
+                <div class="col-sm-4">
+                </div>
+                <div class="col-sm-3">
+                    <h3><center>Available Teams</center></h3>
+                </div>
+                <div class="col-sm-3">
+                </div>
+                <hr>
+                <!--Cards of the avalable teams-->
+                <div class="card-columns">
+                    {% if teams %}
+                    {% for team in teams %}
+                    <div class="card">
+                        <img src="download.jpg" class="card-img-top" alt="Team Picture">
+                        <div class="card-body">
+                            <h5 class="card-title">{{ team.name }}</h5>
+                            <p class="card-text">{{ team.team_info }}</p>
+                            <p>Skills Wanted:</p>
+                            <span class="badge badge-pill badge-info p-2 m-1">C</span>
+                            <span class="badge badge-pill badge-info p-2 m-1">C++</span><br><br>
+                            <a href="Team.html" class="btn btn-primary">See Team</a>
+                        </div>
+                    </div>
+                    {% endfor %}
+                    {% endif %}
+                </div>
+            </div>
+        </div>
+        <!--Available People tab-->
+        <div id="People" class="container tab-pane">
+            <div class="row">
+                <br>
+                <div class="col-sm-4">
+                </div>
+                <div class="col-sm-3">
+                    <br>
+                    <h3><center>Available People</center></h3>
+                </div>
+                <div class="col-sm-3">
+                </div>
+                <hr>
+                <!--Cards of the avalable People-->
+                <div class="card-columns">
+                    {% if students %}
+                    {% for enrolledin in students %}
+                    <div class="card">
+                        <img src="download.jpg" class="card-img-top" alt="Profile Picture">
+                        <div class="card-body">
+                            <h5 class="card-title">{{ enrolledin.student.account.first_name}} {{ enrolledin.student.account.last_name}}</h5>
+                            <p class="card-text">{{ enrolledin.student.account.email}}</p>
+                            <span class="badge badge-pill badge-info p-2 m-1">C</span>
+                            <span class="badge badge-pill badge-info p-2 m-1">C++</span><br><br>
+                            <a href="profile.html" class="btn btn-primary">See Profile</a>
+                        </div>
+                    </div>
+                    {% endfor %}
+                    {% endif %}
+                </div>
+            </div>
+        </div>
+        <!--Create a Team tab-->
+        <div id="Create_Team" class="tab-pane fade">
+            <div class="container">
+                <div class="row">
+                    <div class="col-sm-4">
+                    </div>
+                    <div class="col-sm-3">
+                    <form>
+                        <div class="form-group">
+                            <br>
+                            <h2><label for="CreateTeam">Team Creation</label></h2>
+                            <input class="form-control form-control-lg" type="text" id="CreateTeam" placeholder="Enter team name">
+                        </div>
+                        <button type="submit" class="btn btn-primary">Create</button>
+                    </form>
+                    </div>
+                    <div class="col-sm-4">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}

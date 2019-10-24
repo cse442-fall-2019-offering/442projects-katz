@@ -1,0 +1,56 @@
+{% extends 'generic.html' %}
+{% block title %}HomePage{% endblock %}
+{% block body %}
+    <!--Tab list: Done straigt on javascript-->
+    <div class="mt-4 container-fluid bg-light">
+        <!--Clickable Tabs on top, link to tab content via href to content id-->
+        <ul class="nav nav-tabs justify-content-center" id="myTab" role="tablist">
+            <li class="nav-item">
+                <a class="nav-link active" id="courses-tab" data-toggle="tab" href="#courses" role="tab" aria-controls="courses" aria-selected="true">Courses</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" id="teams-tab" data-toggle="tab" href="#teams" role="tab" aria-controls="teams" aria-selected="false">Teams</a>
+            </li>
+        </ul>
+        <!--Tab Conent: Whats contained in each tab-->
+        <div class="tab-content" id="myTabContent">
+            <!--Courses Tab-->
+            <div class="tab-pane fade show active" id="courses" role="tabpanel" aria-labelledby="courses-tab">
+                <!--Courses listed as cards-->
+                <div class="container-fluid d-flex justify-content-center flex-row flex-wrap">
+                {% if classes %}
+                    {% for enrolledin in classes %}
+                    <div class="card m-1" style="width: 18rem;">
+                        <a href="{{ enrolledin.in_class.get_absolute_url }}">
+                            <div class="card-body">
+                                <h5 class="card-title">{{ enrolledin.in_class.name }}</h5>
+                                <h6 class="card-subtitle mb-2 text-muted">{{ enrolledin.in_class.class_info }}</h6>
+                            </div>
+                        </a>
+                    </div>
+                    {% endfor %}
+                {% endif %}
+                </div>
+            </div>
+            <!--Teams Tab-->
+            <div class="tab-pane fade" id="teams" role="tabpanel" aria-labelledby="teams-tab">
+                <div class="container-fluid justify-content-center d-flex flex-row flex-wrap">
+                    <!--Teams done as cards-->
+                {% if teams %}
+                    {% for inteam in teams%}
+                    <div class="card m-1" style="width: 18rem;">
+                            <div class="card-body">
+                                <h5 class="card-title">{{ inteam.team.name }}</h5>
+                                <h6 class="card-subtitle mb-2 text-muted">{{ inteam.team.team_info }}</h6>
+                                <p class="card-text">Max Students: {{ inteam.team.max_teammates }}</p>
+                                <a href="Team.html" class="card-link">Team</a>
+                                <a href="Class.html" class="card-link">Class</a>
+                            </div>
+                    </div>
+                    {% endfor %}
+                {% endif %}
+                </div> 
+            </div>
+        </div>
+    </div>
+{% endblock %}
