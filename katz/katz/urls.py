@@ -26,7 +26,7 @@ urlpatterns = [
 from django.urls import include
 
 urlpatterns += [
-    path('teamapp/', include('teamapp.urls')),
+    path('', include('teamapp.urls')),
 ]
 
 from django.conf import settings
