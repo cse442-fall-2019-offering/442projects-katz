@@ -114,3 +114,14 @@ def leaveteam(request, idOfTeam):
 @login_required
 def myprofilepage(request):
     return HttpResponseRedirect(reverse('profilepage', args=[str(request.user.username)]))
+
+from teamapp.forms import createAccountForm
+from django.contrib.auth.forms import UserCreationForm
+def createAccount(request):
+    form = UserCreationForm()
+    context = {
+        'form' : form,
+    }
+
+    #return render(request, 'profilepage.html', context=context)
+    return render(request, 'createaccount.html', context=context)

@@ -22,6 +22,11 @@ class createTeam(ModelForm):
     class Meta:
         model = Team
         fields = ['name','team_info','max_teammates',]
-        
 
+from teamapp.models import Student
+from django.contrib.auth.models import User
+class createAccountForm(ModelForm):
 
+    class Meta:
+        model = User
+        fields = ['first_name', 'last_name', 'username','password',]

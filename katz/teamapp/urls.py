@@ -9,4 +9,5 @@ urlpatterns = [
     path('team/<int:idOfTeam>/join/', views.jointeam, name='jointeam'),
     path('team/<int:idOfTeam>/leave/', views.leaveteam, name='leaveteam'),
     path('user/myprofilepage', views.myprofilepage, name='myprofilepage'),
+    path('createaccount/', views.createAccount, name='createaccount'),
 ]
