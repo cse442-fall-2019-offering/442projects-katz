@@ -1,48 +1,5 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <title>Class</title>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
-    <script>
-        $(document).ready(function(){
-        $(".nav-tabs a").click(function(){
-        $(this).tab('show');
-        });
-        });
-    </script>
-</head>
-<body>
-
-
-<!--Navbar of page-->
-<nav class="navbar navbar-expand-md navbar-dark bg-dark sticky-top"  style="min-height: 54px; min-width:200px;">
-    <div class="container-fluid"style="min-height: 54px;" >
-      <a class="navbar-brand" href="mainpge.html">K A T Z</a>
-      <button class="navbar-toggler float-right" type="button" data-toggle="collapse" data-target="#navbarResponsive">
-        <span class="navbar-toggler-icon"></span>
-      </button>    <div class="collapse navbar-collapse" id="navbarResponsive">        <ul class="navbar-nav ml-auto mx-auto d-flex align-items-center">
-            <li class="nav-item active">
-              <a class="nav-link" href="mainpge.html">Home</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="profile.html">My Profile</a>
-            </li>
-            <form class="form-inline my-2 my-lg-0">
-                <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
-                <button class="btn btn-info" type="submit">Search</button>
-            </form>
-          </ul>
-        <a href="Login.html" class="btn btn-info pull-right" style="float: right;"role="button">Logout</a>
-      </div>
-    </nav>
-
-
-<!-- Class Title on top of center of page-->
+{% block content %}
+<!--Class Title on top of center of page-->
 <div class="container">
     <div class="row">
         <div class="col-sm-4">
@@ -64,7 +21,7 @@ Also has a paragraph about the page.
     <div class="row">
         <div class="col-sm-3">
             <div class="card">
-                <img src="download.jpg" class="card-img-top" alt="Class Picture">
+                <img src="../img/download.jpg" class="card-img-top" alt="Class Picture">
             </div>
             <hr>
             <p>Lecturer: Mathhew Hurts</p>
@@ -120,7 +77,7 @@ Tab bar containg 4 pages to swap between with below the CLass info
             <!--Cards of the avalable teams-->
             <div class="card-columns">
                 <div class="card">
-                    <img src="download.jpg" class="card-img-top" alt="Team Picture">
+                    <img src="../img/download.jpg" class="card-img-top" alt="Team Picture">
                     <div class="card-body">
                         <h5 class="card-title">Team 1</h5>
                         <p class="card-text">s in the weekday! The liberal fishes my pathetic opponent throughout the geometry. The boot reflects in the excess! The salt purges under the sniff. The analyst disgusts a paint across a wicked neighborhood.
@@ -132,7 +89,7 @@ Tab bar containg 4 pages to swap between with below the CLass info
                     </div>
                 </div>
                 <div class="card">
-                    <img src="download.jpg" class="card-img-top" alt="Team Picture">
+                    <img src="../img/download.jpg" class="card-img-top" alt="Team Picture">
                     <div class="card-body">
                         <h5 class="card-title">Team 2</h5>
                         <p class="card-text">s in the weekday! The liberal fishes my pathetic opponent throughout the geometry. The boot reflects in the excess! The salt purges under the sniff. The analyst disgusts a paint across a wicked neighborhood.
@@ -144,7 +101,7 @@ Tab bar containg 4 pages to swap between with below the CLass info
                     </div>
                 </div>
                 <div class="card">
-                    <img src="download.jpg" class="card-img-top" alt="Team Picture">
+                    <img src="../img/download.jpg" class="card-img-top" alt="Team Picture">
                     <div class="card-body">
                         <h5 class="card-title">Team 3</h5>
                         <p class="card-text">s in the weekday! The liberal fishes my pathetic opponent throughout the geometry. The boot reflects in the excess! The salt purges under the sniff. The analyst disgusts a paint across a wicked neighborhood.
@@ -156,7 +113,7 @@ Tab bar containg 4 pages to swap between with below the CLass info
                     </div>
                 </div>
                 <div class="card">
-                    <img src="download.jpg" class="card-img-top" alt="Team Picture">
+                    <img src="../img/download.jpg" class="card-img-top" alt="Team Picture">
                     <div class="card-body">
                         <h5 class="card-title">Team 4</h5>
                         <p class="card-text">s in the weekday! The liberal fishes my pathetic opponent throughout the geometry. The boot reflects in the excess! The salt purges under the sniff. The analyst disgusts a paint across a wicked neighborhood.
@@ -168,7 +125,7 @@ Tab bar containg 4 pages to swap between with below the CLass info
                     </div>
                 </div>
                 <div class="card">
-                    <img src="download.jpg" class="card-img-top" alt="Team Picture">
+                    <img src="../img/download.jpg" class="card-img-top" alt="Team Picture">
                     <div class="card-body">
                         <h5 class="card-title">Team 5</h5>
                         <p class="card-text">s in the weekday! The liberal fishes my pathetic opponent throughout the geometry. The boot reflects in the excess! The salt purges under the sniff. The analyst disgusts a paint across a wicked neighborhood.
@@ -198,7 +155,7 @@ Tab bar containg 4 pages to swap between with below the CLass info
             <!--Cards of the avalable People-->
             <div class="card-columns">
                 <div class="card">
-                    <img src="download.jpg" class="card-img-top" alt="Profile Picture">
+                    <img src="../img/download.jpg" class="card-img-top" alt="Profile Picture">
                     <div class="card-body">
                         <h5 class="card-title">Person 3</h5>
                         <p class="card-text">s in the weekday! The liberal fishes my pathetic opponent throughout the geometry. The boot reflects in the excess! The salt purges under the sniff. The analyst disgusts a paint across a wicked neighborhood.
@@ -209,7 +166,7 @@ Tab bar containg 4 pages to swap between with below the CLass info
                     </div>
                 </div>
                 <div class="card">
-                    <img src="download.jpg" class="card-img-top" alt="Profile Picture">
+                    <img src="../img/download.jpg" class="card-img-top" alt="Profile Picture">
                     <div class="card-body">
                         <h5 class="card-title">Person 3</h5>
                         <p class="card-text">s in the weekday! The liberal fishes my pathetic opponent throughout the geometry. The boot reflects in the excess! The salt purges under the sniff. The analyst disgusts a paint across a wicked neighborhood.
@@ -220,7 +177,7 @@ Tab bar containg 4 pages to swap between with below the CLass info
                     </div>
                 </div>
                 <div class="card">
-                    <img src="download.jpg" class="card-img-top" alt="Profile Picture">
+                    <img src="../img/download.jpg" class="card-img-top" alt="Profile Picture">
                     <div class="card-body">
                         <h5 class="card-title">Person 3</h5>
                         <p class="card-text">s in the weekday! The liberal fishes my pathetic opponent throughout the geometry. The boot reflects in the excess! The salt purges under the sniff. The analyst disgusts a paint across a wicked neighborhood.
@@ -231,7 +188,7 @@ Tab bar containg 4 pages to swap between with below the CLass info
                     </div>
                 </div>
                 <div class="card">
-                    <img src="download.jpg" class="card-img-top" alt="Profile Picture">
+                    <img src="../img/download.jpg" class="card-img-top" alt="Profile Picture">
                     <div class="card-body">
                         <h5 class="card-title">Person 3</h5>
                         <p class="card-text">s in the weekday! The liberal fishes my pathetic opponent throughout the geometry. The boot reflects in the excess! The salt purges under the sniff. The analyst disgusts a paint across a wicked neighborhood.
@@ -242,7 +199,7 @@ Tab bar containg 4 pages to swap between with below the CLass info
                     </div>
                 </div>
                 <div class="card">
-                    <img src="download.jpg" class="card-img-top" alt="Profile Picture">
+                    <img src="../img/download.jpg" class="card-img-top" alt="Profile Picture">
                     <div class="card-body">
                         <h5 class="card-title">Person 3</h5>
                         <p class="card-text">s in the weekday! The liberal fishes my pathetic opponent throughout the geometry. The boot reflects in the excess! The salt purges under the sniff. The analyst disgusts a paint across a wicked neighborhood.
@@ -277,7 +234,4 @@ Tab bar containg 4 pages to swap between with below the CLass info
         </div>
     </div>
 </div>
-
-</body>
-
-</html>
+{% endblock content %}

@@ -1,0 +1,97 @@
+{% extends "templates/base.html" %}
+{% block content %}
+<div class="container">
+    <div class="row">
+        <div class="col-sm-3">
+            <br>
+            <br>
+            <br>
+            <div class="card">
+                <img src="../img/download.jpg" class="card-img-top" alt="Team Picture">
+            </div>
+            <hr>
+
+            <form>
+                <div class="form-group">
+                    <label for="email">Add Member</label>
+                    <input type="email" class="form-control" id="email" aria-describedby="emailHelp" placeholder="Enter email">
+                    <small id="emailHelp" class="form-text text-muted">Add wanted group members email here</small>
+                </div>
+                <button type="submit" class="btn btn-primary">Send Request</button>
+                <hr>
+                <div class="form-group">
+                    <label for="email1">Leave Group</label>
+                    <input class="form-control form-control-lg" type="text" id="CreateTeam" placeholder="Enter Leave Team">
+                    <small id="CreateTeam" class="form-text text-muted">Enter Leave Team in chat box to leave team</small>
+                </div>
+                <button type="submit" class="btn btn-primary">Leave Group</button>
+                <hr>
+                <div class="form-group">
+                    <label for="email">Kick Member</label>
+                    <input type="email" class="form-control" id="emailq" aria-describedby="emailHelp" placeholder="Enter email">
+                    <small id="emailHelp" class="form-text text-muted">Add gruop member's email you want to kick here</small>
+                </div>
+                <button type="submit" class="btn btn-primary">Kick Member</button>
+                <hr>
+                <button type="submit" class="btn btn-primary">Close Group</button>
+            </form>
+        </div>
+        <div class="col-sm-7">
+            <h1><center>Team No Loopholes</center></h1>
+            <!--project description-->
+            <p>Why won't the gullible curve soil the community affair? When can the closest poke snack against the panic? A graduated scotch spends a whale. A predecessor persecutes the rattled collective. A grandfather butters the incomprehensible jam beneath the distress. A citizen scans the blast.
+                The overnight trash shines without a desert. The dangerous bullet tags a sunny violence. The gutter tackles a rip. The intermediate eater fusses the magnetic hypothesis.
+                My peer argues in the weekday! The liberal fishes my pathetic opponent throughout the geometry. The boot reflects in the excess! The salt purges under the sniff. The analyst disgusts a paint across a wicked neighborhood.
+                Behind a padded physicist hums the blocked pain. A desirable autumn
+                explodes beside our squared coast. The incorporate dragon fumes near
+                a sterile calendar. After a camp boggles the constituent library. The
+                tree labels our look. The realizing follower raves past the reporter.The assistant rockets on top of the undesirable. A desire speaks opposite the stiff! Beneath an untrue weasel thirsts every rumored ribbon. The legend recovers! The designer pedant sighs.</p>
+                <!--skills-->
+                <h4 class="border-bottom border-dark p-1">Skills Wanted</h4>
+                <span class="badge badge-pill badge-info p-2 m-1">Python</span>
+                <span class="badge badge-pill badge-info p-2 m-1">Java</span>
+                <span class="badge badge-pill badge-info p-2 m-1">Networking</span>
+                <span class="badge badge-pill badge-info p-2 m-1">C++</span>
+                <span class="badge badge-pill badge-info p-2 m-1">C</span>
+                <h4 class="border-bottom border-dark p-1">Roster</h4>
+                <!--People in Team-->
+                <div class="card-group">
+                    <div class="card">
+                        <img src="../img/download.jpg" class="card-img-top" alt="Profile Picture">
+                        <div class="card-body">
+                            <h5 class="card-title">Person 1</h5>
+                            <p class="card-text">s in the weekday! The liberal fishes my pathetic opponent throughout the geometry. The boot reflects in the excess! The salt purges under the sniff. The analyst disgusts a paint across a wicked neighborhood.
+                            Behind a padded physicist hums the blocked pain</p>
+                            <span class="badge badge-pill badge-info p-2 m-1">C++</span>
+                            <span class="badge badge-pill badge-info p-2 m-1">C</span><br><br>
+                            <a href="profile.html" class="btn btn-primary">See Profile</a>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <img src="../img/download.jpg" class="card-img-top" alt="Profile Picture">
+                        <div class="card-body">
+                            <h5 class="card-title">Person 2</h5>
+                            <p class="card-text">s in the weekday! The liberal fishes my pathetic opponent throughout the geometry. The boot reflects in the excess! The salt purges under the sniff. The analyst disgusts a paint across a wicked neighborhood.
+                            Behind a padded physicist hums the blocked pain</p>
+                            <span class="badge badge-pill badge-info p-2 m-1">C</span>
+                            <span class="badge badge-pill badge-info p-2 m-1">C++</span><br><br>
+                            <a href="profile.html" class="btn btn-primary">See Profile</a>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <img src="../img/download.jpg" class="card-img-top" alt="Profile Picture">
+                        <div class="card-body">
+                            <h5 class="card-title">Person 3</h5>
+                            <p class="card-text">s in the weekday! The liberal fishes my pathetic opponent throughout the geometry. The boot reflects in the excess! The salt purges under the sniff. The analyst disgusts a paint across a wicked neighborhood.
+                            Behind a padded physicist hums the blocked pain</p>
+                            <span class="badge badge-pill badge-info p-2 m-1">C</span>
+                            <span class="badge badge-pill badge-info p-2 m-1">C++</span><br><br>
+                            <a href="profile.html" class="btn btn-primary">See Profile</a>
+                        </div>
+                    </div>
+                </div>
+        </div>
+    </div>
+</div>
+
+{% endblock content %}
