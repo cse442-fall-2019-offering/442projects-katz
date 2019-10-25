@@ -23,19 +23,19 @@
     <!--Navigation Bar-->
     <nav class="navbar navbar-expand-md navbar-dark bg-dark sticky-top"  style="min-height: 54px; min-width:200px;">
             <div class="container-fluid"style="min-height: 54px;" >
-              <a class="navbar-brand" href="mainpge.html">K A T Z</a>
+              <a class="navbar-brand" href="{% url 'homepage' %}">K A T Z</a>
               <button class="navbar-toggler float-right" type="button" data-toggle="collapse" data-target="#navbarResponsive">
                 <span class="navbar-toggler-icon"></span>
               </button>    <div class="collapse navbar-collapse" id="navbarResponsive">        <ul class="navbar-nav ml-auto mx-auto d-flex align-items-center">
                     
                     <li class="nav-item">
-                      <a class="nav-link" href="profile.html">My Profile</a>
+                      <a class="nav-link" href="{% url 'myprofilepage' %}">My Profile</a>
                     </li>
                     <form class="form-inline my-2 my-lg-0">
                         <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
                         <button class="btn btn-info" type="submit">Search</button>
                     </form>
-                  </ul>        <a href="Login.html" class="btn btn-info pull-right" style="float: right;"role="button">Logout</a>
+                  </ul>        <a href="{% url 'logout' %}" class="btn btn-info pull-right" style="float: right;"role="button">Logout</a>
               </div>
     </nav>
     {% block body %}
