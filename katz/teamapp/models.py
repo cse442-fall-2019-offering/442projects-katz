@@ -43,9 +43,6 @@ class Team(models.Model):
 
     def __str__(self):
         return self.name
-
-    def get_absolute_url(self):
-        return reverse('teampage', args=[str(self.id)])
     
 class Student(models.Model):
     account = models.ForeignKey(User, on_delete=models.CASCADE)
@@ -54,9 +51,6 @@ class Student(models.Model):
     
     def __str__(self):
         return self.account.first_name + " " + self.middle_name + " " + self.account.last_name
-
-    def get_absolute_url(self):
-        return reverse('profilepage',args=[str(self.account.username)])
 
 class EnrolledIn(models.Model):
     student = models.ForeignKey(Student, on_delete=models.CASCADE)

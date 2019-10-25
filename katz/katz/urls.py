@@ -15,24 +15,24 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
-from django.views.generic import RedirectView
+from users import views as user_views
+from django.contrib.auth import views as auth_views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
+    path('', user_views.login, name='login'),
+    path('register/', user_views.register, name='register'),
+    path('login/', auth_views.LoginView.as_view(template_name='users/login.html'), name='login'),
+
 ]
 
 from django.urls import include
 
 urlpatterns += [
-    path('teamapp/', include('teamapp.urls')),
-    path('', RedirectView.as_view(url='/teamapp/', permanent=True))
+    path('home/', include('teamapp.urls')),
 ]
 
 from django.conf import settings
 from django.conf.urls.static import static
 
 urlpatterns += static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
-
-urlpatterns += [
-    path('accounts/', include('django.contrib.auth.urls')),
-]

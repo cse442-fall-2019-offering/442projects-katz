@@ -1,5 +1,5 @@
 {% extends 'generic.html' %}
-{% block title %}Class Page{% endblock %}
+
 {% block body %}
 <!--Class Title on top of center of page-->
 <div class="container">
@@ -23,8 +23,7 @@
         <div class="row">
             <div class="col-sm-3">
                 <div class="card">
-                    {% load static %}
-                    <img src="{% static 'download.jpg' %}" class="card-img-top" alt="Class Picture">
+                    <img src="download.jpg" class="card-img-top" alt="Class Picture">
                 </div>
                 <hr>
                 <p>Lecturer: {{classOfId.professor_name}}</p>
@@ -46,13 +45,13 @@
     <div class="container">
         <ul class="nav nav-tabs nav-fill">
             <li class="nav-item">
-                <a class="nav-link " data-toggle="tab" href="#Teams">Avaliable Teams</a>
+                <a class="nav-link active" data-toggle="tab" href="#Teams">Avaliable Teams</a>
             </li>
             <li class="nav-item">
                 <a class="nav-link" data-toggle="tab" href="#People">People</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link active" data-toggle="tab" href="#Create_Team">Create Team</a>
+                <a class="nav-link" data-toggle="tab" href="#Create_Team">Create Team</a>
             </li>
         </ul>
     </div>
@@ -61,7 +60,7 @@
     <!--The 4 Tabs are here-->
     <div class="tab-content">
         <!--Available Teams tab-->
-        <div id="Teams" class="container tab-pane"><br>
+        <div id="Teams" class="container tab-pane active"><br>
             <div class="row">
                 <div class="col-sm-4">
                 </div>
@@ -76,11 +75,14 @@
                     {% if teams %}
                     {% for team in teams %}
                     <div class="card">
-                        <img src="{% static 'download.jpg' %}" class="card-img-top" alt="Team Picture">
+                        <img src="download.jpg" class="card-img-top" alt="Team Picture">
                         <div class="card-body">
                             <h5 class="card-title">{{ team.name }}</h5>
                             <p class="card-text">{{ team.team_info }}</p>
-                            <a href="{{team.get_absolute_url}}" class="btn btn-primary">See Team</a>
+                            <p>Skills Wanted:</p>
+                            <span class="badge badge-pill badge-info p-2 m-1">C</span>
+                            <span class="badge badge-pill badge-info p-2 m-1">C++</span><br><br>
+                            <a href="Team.html" class="btn btn-primary">See Team</a>
                         </div>
                     </div>
                     {% endfor %}
@@ -106,11 +108,13 @@
                     {% if students %}
                     {% for enrolledin in students %}
                     <div class="card">
-                        <img src="{% static 'download.jpg' %}" class="card-img-top" alt="Profile Picture">
+                        <img src="download.jpg" class="card-img-top" alt="Profile Picture">
                         <div class="card-body">
                             <h5 class="card-title">{{ enrolledin.student.account.first_name}} {{ enrolledin.student.account.last_name}}</h5>
                             <p class="card-text">{{ enrolledin.student.account.email}}</p>
-                            <a href="{{enrolledin.student.get_absolute_url}}" class="btn btn-primary">See Profile</a>
+                            <span class="badge badge-pill badge-info p-2 m-1">C</span>
+                            <span class="badge badge-pill badge-info p-2 m-1">C++</span><br><br>
+                            <a href="profile.html" class="btn btn-primary">See Profile</a>
                         </div>
                     </div>
                     {% endfor %}
@@ -119,18 +123,19 @@
             </div>
         </div>
         <!--Create a Team tab-->
-        <div id="Create_Team" class="container tab-pane active">
+        <div id="Create_Team" class="tab-pane fade">
             <div class="container">
                 <div class="row">
                     <div class="col-sm-4">
                     </div>
                     <div class="col-sm-3">
-                    <form action="" method='post'>
-                        {% csrf_token %}
-                        {{ form.as_table }}
-                        <hr>
-                        <p class='m3'><button type="submit" class="btn btn-primary">Create</button></p>
-                        <hr>
+                    <form>
+                        <div class="form-group">
+                            <br>
+                            <h2><label for="CreateTeam">Team Creation</label></h2>
+                            <input class="form-control form-control-lg" type="text" id="CreateTeam" placeholder="Enter team name">
+                        </div>
+                        <button type="submit" class="btn btn-primary">Create</button>
                     </form>
                     </div>
                     <div class="col-sm-4">
