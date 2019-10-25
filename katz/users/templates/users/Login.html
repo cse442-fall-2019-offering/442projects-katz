@@ -3,10 +3,10 @@
 	<div class="login">
 		<h1>Login</h1>
 	    <form method="post">
-	    	<input type="text" name="u" placeholder="Username"/>
-	        <input type="password" name="p" placeholder="Password"/>
-	        <input type="button" class="btn" value="Log In" onclick="window.location.href='mainpge.html'" />
-	        <input type="button" class="btn" value="Create Account" onclick="window.location.href='register'" />
+            {% csrf_token %}
+            {{ form.as_p }}
+            <input type="submit"/>
+	        <input type="button" class="btn" value="Create Account" onclick="window.location.href='/register'" />
 
 	    </form>
 	</div>

@@ -37,7 +37,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'teamapp',
+    'teamapp.apps.TeamappConfig',
     'users.apps.UsersConfig',
 ]
 
@@ -70,7 +70,7 @@ TEMPLATES = [
 ]
 
 WSGI_APPLICATION = 'katz.wsgi.application'
-
+LOGIN_REDIRECT_URL = '/home'
 
 # Database
 # https://docs.djangoproject.com/en/2.2/ref/settings/#databases
