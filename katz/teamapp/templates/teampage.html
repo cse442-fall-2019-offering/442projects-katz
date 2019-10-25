@@ -1,0 +1,54 @@
+{% extends 'generic.html' %}
+{% block title %}Team Page{% endblock %}
+
+{% block body %}
+{% load static %}
+<div class="container">
+    <div class="row">
+        <div class="col-sm-3">
+            <br>
+            <br>
+            <br>
+            <div class="card">
+                <img src="{% static 'download.jpg' %}" class="card-img-top" alt="Team Picture">
+            </div>
+            {% if userteam %}
+            <form action='leave/' method = "post">
+                {% csrf_token %}
+                <hr>
+                <button type="submit" class="btn btn-primary">Leave Group</button>
+                <hr>
+            </form>
+            {% else %}
+            <form action="join/" method = "post">
+                {% csrf_token %}
+                <hr>
+                <button type="submit" class="btn btn-primary">Join Team</button>
+                <hr>
+            </form>
+            {% endif %}
+        </div>
+        <div class="col-sm-7">
+            <h1><center>{{team.name}}</center></h1>
+            <!--project description-->
+            <p>{{team.team_info}}</p>
+                <h4 class="border-bottom border-dark p-1">Roster</h4>
+                <!--People in Team-->
+                <div class="card-group">
+                    {% if teamMems %}
+                    {% for mem in teamMems%}
+                    <div class="card">
+                        <img src="{% static 'download.jpg' %}" class="card-img-top" alt="Profile Picture">
+                        <div class="card-body">
+                            <h5 class="card-title"> {{mem.student.account.first_name}} {{mem.student.middle_name}} {{mem.student.account.last_name}}</h5>
+                            <p class="card-text"></p>
+                            <a href="{{mem.student.get_absolute_url}}" class="btn btn-primary">See Profile</a>
+                        </div>
+                    </div>
+                    {% endfor %}
+                    {% endif %}
+                </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
