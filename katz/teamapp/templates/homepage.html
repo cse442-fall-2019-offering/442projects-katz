@@ -43,8 +43,8 @@
                                 <h5 class="card-title">{{ inteam.team.name }}</h5>
                                 <h6 class="card-subtitle mb-2 text-muted">{{ inteam.team.team_info }}</h6>
                                 <p class="card-text">Max Students: {{ inteam.team.max_teammates }}</p>
-                                <a href="Team.html" class="card-link">Team</a>
-                                <a href="Class.html" class="card-link">Class</a>
+                                <a href="{{inteam.team.get_absolute_url}}" class="card-link">Team</a>
+                                <a href="{{ inteam.team.in_class.get_absolute_url }}" class="card-link">Class</a>
                             </div>
                     </div>
                     {% endfor %}
