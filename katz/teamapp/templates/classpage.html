@@ -121,10 +121,7 @@
         <!--Create a Team tab-->
         <div id="Create_Team" class="container tab-pane active">
             <div class="container">
-                <div class="row">
-                    <div class="col-sm-4">
-                    </div>
-                    <div class="col-sm-3">
+                    <div class="col-auto">
                     <form action="" method='post'>
                         {% csrf_token %}
                         {{ form.as_table }}
@@ -133,9 +130,6 @@
                         <hr>
                     </form>
                     </div>
-                    <div class="col-sm-4">
-                    </div>
-                </div>
             </div>
         </div>
     </div>

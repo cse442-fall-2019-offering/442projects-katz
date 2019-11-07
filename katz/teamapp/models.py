@@ -32,21 +32,7 @@ class Class(models.Model):
     def get_absolute_url(self):
         return reverse('classpage', args=[str(self.id)])
 
-class Team(models.Model):
-    in_class = models.ForeignKey(Class, on_delete=models.CASCADE)
-    name = models.CharField(max_length=255, null=False, blank=False)
-    team_info = models.TextField()
-    max_teammates = models.IntegerField(null=False, blank=False)
 
-    class Meta:
-        unique_together = (("in_class","name"),)
-
-    def __str__(self):
-        return self.name
-
-    def get_absolute_url(self):
-        return reverse('teampage', args=[str(self.id)])
-    
 class Student(models.Model):
     account = models.ForeignKey(User, on_delete=models.CASCADE)
     school = models.ForeignKey(School, on_delete=models.CASCADE)
@@ -57,6 +43,23 @@ class Student(models.Model):
 
     def get_absolute_url(self):
         return reverse('profilepage',args=[str(self.account.username)])
+
+class Team(models.Model):
+    in_class = models.ForeignKey(Class, on_delete=models.CASCADE)
+    name = models.CharField(max_length=255, null=False, blank=False)
+    team_info = models.TextField()
+    max_teammates = models.IntegerField(null=False, blank=False)
+    team_leader = models.ForeignKey('Student', null=False, blank=False, on_delete=models.CASCADE)
+
+    class Meta:
+        unique_together = (("in_class","name"),)
+
+    def __str__(self):
+        return self.name
+
+    def get_absolute_url(self):
+        return reverse('teampage', args=[str(self.id)])
+
 
 class EnrolledIn(models.Model):
     student = models.ForeignKey(Student, on_delete=models.CASCADE)

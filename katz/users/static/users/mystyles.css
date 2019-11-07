@@ -1,0 +1,43 @@
+body {
+	width: 100%;
+	height:100%;
+	background-image: url("background.jpg");
+	background-size:cover;
+	background-attachment:fixed;
+	background-position:center center;
+}
+.login {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	margin: -150px 0 0 -150px;
+	width:300px;
+	height:300px;
+}
+.createAcc{
+	position: relative;
+	top: 50%;
+	left: 50%;
+	margin: -150px 0 0 -150px;
+	width: 300px;
+	height:300px;
+}
+
+input {
+	width: 100%;
+	margin-bottom: 10px;
+	background: #fff;
+	border: none;
+	outline: none;
+	padding: 10px;
+	font-size: 13px;
+	color: rgb(0, 0, 0);
+	border: 1.5px solid rgb(0, 0, 0);
+	border-radius: 4px;
+	box-shadow: inset 0 -5px 45px rgba(100,100,100,0.2), 0 1px 1px rgba(255,255,255,0.2);
+
+}
+
+.btn:hover { color: #333333; background-color: #e6e6e6; }
+.login h1 { color: #fff; text-shadow: 0 0 20px rgba(0,0,0); letter-spacing:1px; text-align:center; }
+.createAcc h1 { color: #fff; text-shadow: 0 0 5px rgba(0,0,0); letter-spacing:1px; text-align:center; }

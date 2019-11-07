@@ -32,6 +32,9 @@
             <h1><center>{{team.name}}</center></h1>
             <!--project description-->
             <p>{{team.team_info}}</p>
+            {% if team.team_leader.account == user %}
+            <a href="/teamapp/team/{{team.id}}/edit" class="btn btn-primary">Edit</a>
+            {% endif %}
                 <h4 class="border-bottom border-dark p-1">Roster</h4>
                 <!--People in Team-->
                 <div class="card-group">
@@ -40,9 +43,21 @@
                     <div class="card">
                         <img src="{% static 'download.jpg' %}" class="card-img-top" alt="Profile Picture">
                         <div class="card-body">
-                            <h5 class="card-title"> {{mem.student.account.first_name}} {{mem.student.middle_name}} {{mem.student.account.last_name}}</h5>
+                            <h5 class="card-title"> 
+                                {% if team.team_leader.account == mem.student.account %}
+                                    <strong>Leader: </strong>
+                                {% endif %}
+                                {{mem.student.account.first_name}} 
+                                {{mem.student.middle_name}} 
+                                {{mem.student.account.last_name}}
+                            </h5>
                             <p class="card-text"></p>
                             <a href="{{mem.student.get_absolute_url}}" class="btn btn-primary">See Profile</a>
+                            {% if team.team_leader.account == user %}
+                            {% if mem.student.account != user %}
+                                <a href="/teamapp/team/{{team.id}}/kick/{{mem.student.account.username}}/" class="btn btn-primary">Kick</a>
+                            {% endif %}
+                            {% endif %}
                         </div>
                     </div>
                     {% endfor %}

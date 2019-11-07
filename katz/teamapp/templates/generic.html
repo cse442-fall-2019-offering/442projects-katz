@@ -17,7 +17,8 @@
     <title>{% block title %}{% endblock %}</title>
 
     <!--Personal style sheet, only contains profile pic size for now.-->
-    <link rel="stylesheet" href="style.css">
+    {% load static %}
+    <link rel="stylesheet" href={% static "style.css" %}>
   </head>
   <body class="bg-light"> 
     <!--Navigation Bar-->
