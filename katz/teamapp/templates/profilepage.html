@@ -12,7 +12,13 @@
           <img src="{% static 'stock-student-photo.jpg' %}" alt="Profile Picture" class="img-fluid img-thumbnail profile-pic mx-auto">
           <div class="align-self-baseline mx-auto">
             <div class="container-fluid d-flex flex-column">
-              <h1 class="text-center"><span class="badge badge-dark"> {{student.account.first_name}} {{student.middle_name}} {{student.account.last_name}}</span></h1> 
+              <h1 class="text-center"><span class="badge badge-dark"> {{student.account.first_name}} {{student.middle_name}} {{student.account.last_name}}</span></h1>
+              {% if student.account == request.user %}
+              <div class="col-auto">
+                <p class='m3'><a href="{% url 'profileEdit' %}" class="btn btn-primary">Edit Personal Info</a></p>
+                <p class='m3'><a href="{% url 'changepassword' %}" class="btn btn-primary">Change Password</a></p>
+              </div>
+              {% endif %}
       </ul>
       <ul>
           <h2 class="border-bottom border-dark p-1">School</h2>

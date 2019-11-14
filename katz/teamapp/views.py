@@ -3,6 +3,9 @@ from teamapp.models import School, EmailURL, Class, Team, Student, EnrolledIn, T
 from django.contrib.auth.decorators import login_required
 from django.http import HttpResponseRedirect
 from django.urls import reverse
+from teamapp.forms import createTeam, UserForm, StudentForm , PasswordChangeFormCSS
+from django.contrib.auth import update_session_auth_hash
+
 
 # Create your views here.
 
@@ -19,8 +22,6 @@ def homepage(request):
     }
 
     return render(request, 'homepage.html', context=context)
-
-from teamapp.forms import createTeam
 
 @login_required
 def classpage(request, idOfClass):
@@ -174,3 +175,54 @@ def teampageEdit(request, idOfTeam):
     }
 
     return render(request, 'editteam.html', context=context)
+
+@login_required
+def profileEdit(request):
+    loggedInUser = request.user
+    student = Student.objects.get(account = loggedInUser);
+
+    if request.method == 'POST':
+        userform = UserForm(request.POST)
+        studform = StudentForm(request.POST)
+        if userform.is_valid() and studform.is_valid():
+            student.account.first_name = userform.cleaned_data['first_name']
+            student.account.last_name = userform.cleaned_data['last_name']
+            student.middle_name = studform.cleaned_data['middle_name']
+            student.account.save()
+            student.save()
+            
+            return HttpResponseRedirect(reverse('myprofilepage'))
+    else:
+        firstname = loggedInUser.first_name
+        lastname = loggedInUser.last_name
+        middlename = student.middle_name
+
+        userform = UserForm(initial={'first_name': firstname, 'last_name':lastname})
+        studform = StudentForm(initial={'middle_name': middlename})
+
+    context = {
+        'userform' : userform,
+        'studform' : studform,
+    }
+
+    return render(request, 'editprofile.html', context=context)
+
+@login_required
+def changePassword(request):
+    loggedInUser = request.user
+    if request.method == 'POST':
+        form = PasswordChangeFormCSS(request.user, request.POST)
+        if form.is_valid():
+            user = form.save()
+            update_session_auth_hash(request, user)
+
+            return HttpResponseRedirect(reverse('myprofilepage'))
+    
+    else:
+        form = PasswordChangeFormCSS(request.user)
+    
+    context = {
+        'form' : form,
+    }
+    
+    return render(request, 'changepassword.html', context)
