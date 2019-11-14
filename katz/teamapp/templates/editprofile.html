@@ -1,14 +1,15 @@
 {% extends 'generic.html' %}
-{% block title %}Edit Team Page{% endblock %}
+{% block title %}Edit Profile{% endblock %}
 {% block body %}
 <div class="form-group m-5">
     <form class='p3' action="" method='post'>
         <div class="col-auto">
             {% csrf_token %}
-            {{ form.as_table }}
+            {{ userform.as_table }}
+            {{ studform.as_table }}
             <hr>
                 <p class='m3'><button type="submit" class="btn btn-primary">Confirm Edit</button></p>
-                <a href="{% url 'teampage' team.id %}" class="btn btn-primary">Cancel</a>
+                <a href="{% url 'myprofilepage' %}" class="btn btn-primary">Cancel</a>
             <hr>
         </div>
     </form>

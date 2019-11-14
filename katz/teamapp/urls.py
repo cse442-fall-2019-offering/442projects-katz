@@ -12,4 +12,6 @@ urlpatterns = [
     path('createaccount/', views.createAccount, name='createaccount'),
     path('team/<int:idOfTeam>/kick/<str:usr>/', views.kickMember, name='kickmember'),
     path('team/<int:idOfTeam>/edit', views.teampageEdit, name='teampageEdit'),
+    path('user/myprofilepage/edit', views.profileEdit, name='profileEdit'),
+    path('user/myprofilepage/changepassword', views.changePassword, name='changepassword')
 ]
