@@ -8,9 +8,9 @@ from teamapp.models import Team
 class createTeam(ModelForm):
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
-        self.fields['name'].widget.attrs.update({'class': 'form-control form-control-lg'})
-        self.fields['team_info'].widget.attrs.update({'class': 'form-control form-control-lg'})
-        self.fields['max_teammates'].widget.attrs.update({'class': 'form-control form-control-lg'})
+        self.fields['name'].widget.attrs.update({'class': 'form-control '})
+        self.fields['team_info'].widget.attrs.update({'class': 'form-control '})
+        self.fields['max_teammates'].widget.attrs.update({'class': 'form-control '})
     
     def clean_max_teammates(self):
         data = self.cleaned_data['max_teammates']

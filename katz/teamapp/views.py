@@ -36,8 +36,15 @@ def classpage(request, idOfClass):
             newteam.name = form.cleaned_data['name']
             newteam.team_info = form.cleaned_data['team_info']
             newteam.max_teammates = form.cleaned_data['max_teammates']
+            newteam.team_leader = Student.objects.get(account = request.user)
             newteam.save()
-            return HttpResponseRedirect(reverse('classpage',args=[str(idOfClass)]))
+
+            leaderentry = Teams();
+            leaderentry.student = Student.objects.get(account = request.user)
+            leaderentry.team = newteam
+            leaderentry.save()
+            
+            return HttpResponseRedirect(reverse('teampage',args=[str(newteam.id)]))
     else:
         form = createTeam()
 
@@ -125,3 +132,45 @@ def createAccount(request):
 
     #return render(request, 'profilepage.html', context=context)
     return render(request, 'createaccount.html', context=context)
+
+@login_required
+def kickMember(request, idOfTeam, usr):
+    t = Teams.objects.all().filter(team__id = idOfTeam)
+    course = Team.objects.get(id = idOfTeam)
+    instance = t.filter(student__account__username = usr)
+    team = Team.objects.get(id = idOfTeam)
+
+    if team.team_leader.account == request.user:
+        if instance:
+            try:
+                instance.delete()
+            except Exception:
+                pass
+    
+    return HttpResponseRedirect(reverse('teampage', args=[str(idOfTeam)]))
+
+@login_required
+def teampageEdit(request, idOfTeam):
+    team = Team.objects.get(id = idOfTeam)
+
+    if request.method == 'POST':
+        form = createTeam(request.POST)
+        if form.is_valid():
+            team.name = form.cleaned_data['name']
+            team.team_info = form.cleaned_data['team_info']
+            team.max_teammates = form.cleaned_data['max_teammates']
+            team.save()
+            
+            return HttpResponseRedirect(reverse('teampage',args=[str(team.id)]))
+    else:
+        teamName = team.name
+        descrip = team.team_info
+        maxteam = team.max_teammates
+        form = createTeam(initial={'name': teamName, 'team_info':descrip, 'max_teammates':maxteam})
+
+    context = {
+        'form' : form,
+        'team' : team,
+    }
+
+    return render(request, 'editteam.html', context=context)
