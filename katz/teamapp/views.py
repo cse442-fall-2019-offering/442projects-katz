@@ -25,9 +25,9 @@ def homepage(request):
 
 @login_required
 def classpage(request, idOfClass):
+    students = EnrolledIn.objects.all().filter(in_class__id = idOfClass)
     teams = Team.objects.all().filter(in_class__id__exact = idOfClass)
     currStudent = Student.objects.get(account_id = request.user.id)
-    students = EnrolledIn.objects.all().filter(in_class__id = idOfClass)
     isStudent = EnrolledIn.objects.all().filter(in_class__id = idOfClass, student_id = currStudent.id)
     classOfId = Class.objects.all().get(id = idOfClass)
 
