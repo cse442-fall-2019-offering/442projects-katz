@@ -31,6 +31,19 @@
                 <p>Website: wgrfhiubrgfhiub.com</p>
                 <p>Times: {{ classOfId.start_time }} - {{ classOfId.end_time }} </p>
                 <p>Contact: 716 243 3784</p>
+                <p> 
+                    {% if joined %}
+                    <form action="{% url 'leaveClass' classOfId.id %}" method='post'>
+                        {% csrf_token %}
+                        <button type="submit" class="btn btn-primary">Leave</button>
+                    </form>
+                    {% else %}
+                    <form action="{% url 'joinClass' classOfId.id %}" method='post'>
+                        {% csrf_token %}
+                        <button type="submit" class="btn btn-primary">Join</button>
+                    </form>
+                    {% endif %}
+                </p>
             </div>
             <div class="col-sm-9">
                 <p>{{classOfId.class_info}}</p>

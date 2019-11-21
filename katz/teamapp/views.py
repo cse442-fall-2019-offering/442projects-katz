@@ -29,7 +29,7 @@ def classpage(request, idOfClass):
     students = EnrolledIn.objects.all().filter(in_class__id = idOfClass)
     classOfId = Class.objects.all().get(id = idOfClass)
 
-    if request.method == 'POST':
+    if request.method == 'POST' and students.get(student = request.user).exists():
         form = createTeam(request.POST)
         if form.is_valid():
             newteam = Team()
@@ -49,11 +49,14 @@ def classpage(request, idOfClass):
     else:
         form = createTeam()
 
+    joined = students.filter(student__account = request.user).exists()
+
     context = {
         'teams' : teams,
         'students' : students,
         'classOfId' : classOfId,
         'form' : form,
+        'joined' : joined,
     }
 
     return render(request, 'classpage.html', context=context)
@@ -226,3 +229,43 @@ def changePassword(request):
     }
     
     return render(request, 'changepassword.html', context)
+
+@login_required
+def schoolClasses(request):
+    loggedInUser = request.user
+    student = Student.objects.get(account = loggedInUser)
+    classes = Class.objects.all().filter(school = student.school).order_by('name', 'start_time', 'professor_name')
+
+    context = {
+        'classes' : classes,
+    }
+
+    return render(request, 'schoolclasses.html', context=context)
+
+@login_required
+def joinClass(request, idOfClass):
+    s = Student.objects.get(account = request.user)
+    c = Class.objects.get(id = idOfClass);
+
+    if request.method == 'POST':
+        joinClassInstance = EnrolledIn(student = s, in_class = c)
+        try:
+            joinClassInstance.save()
+        except Exception:
+            pass
+
+    return HttpResponseRedirect(reverse('classpage', args=[str(c.id)]))
+
+@login_required
+def leaveClass(request, idOfClass):
+    s = Student.objects.get(account = request.user)
+    c = Class.objects.get(id = idOfClass);
+
+    if request.method == 'POST':
+        joinClassInstance = EnrolledIn.objects.get(student = s, in_class = c)
+        try:
+            joinClassInstance.delete()
+        except Exception:
+            pass
+
+    return HttpResponseRedirect(reverse('classpage', args=[str(c.id)]))
