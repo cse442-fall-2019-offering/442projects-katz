@@ -67,7 +67,23 @@ def teampage(request, idOfTeam):
     teamMems = Teams.objects.all().filter(team__id = idOfTeam)
     userteam = teamMems.filter(student__account = request.user)
 
+    if request.method == 'POST' and team.team_leader.account == request.user:
+        form = createTeam(request.POST)
+        if form.is_valid():
+            team.name = form.cleaned_data['name']
+            team.team_info = form.cleaned_data['team_info']
+            team.max_teammates = form.cleaned_data['max_teammates']
+            team.save()
+            
+            return HttpResponseRedirect(reverse('teampage',args=[str(team.id)]))
+    else:
+        teamName = team.name
+        descrip = team.team_info
+        maxteam = team.max_teammates
+        form = createTeam(initial={'name': teamName, 'team_info':descrip, 'max_teammates':maxteam})
+
     context = {
+        'form' : form,
         'team' : team,
         'teamMems' : teamMems,
         'idOfTeam' : idOfTeam,
