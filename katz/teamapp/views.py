@@ -26,10 +26,12 @@ def homepage(request):
 @login_required
 def classpage(request, idOfClass):
     teams = Team.objects.all().filter(in_class__id__exact = idOfClass)
+    currStudent = Student.objects.get(account_id = request.user.id)
     students = EnrolledIn.objects.all().filter(in_class__id = idOfClass)
+    isStudent = EnrolledIn.objects.all().filter(in_class__id = idOfClass, student_id = currStudent.id)
     classOfId = Class.objects.all().get(id = idOfClass)
 
-    if request.method == 'POST' and students.get(student = request.user).exists():
+    if request.method == 'POST' and isStudent.exists():
         form = createTeam(request.POST)
         if form.is_valid():
             newteam = Team()
@@ -44,7 +46,7 @@ def classpage(request, idOfClass):
             leaderentry.student = Student.objects.get(account = request.user)
             leaderentry.team = newteam
             leaderentry.save()
-            
+
             return HttpResponseRedirect(reverse('teampage',args=[str(newteam.id)]))
     else:
         form = createTeam()
@@ -94,7 +96,7 @@ def jointeam(request, idOfTeam):
     t = Team.objects.get(id=idOfTeam)
 
     joinTeamInstance = Teams(student = s, team = t)
-    
+
     try:
         joinTeamInstance.save()
     except Exception:
@@ -113,13 +115,13 @@ def leaveteam(request, idOfTeam):
             instance.delete()
         except Exception:
             pass
-    
+
     if Teams.objects.all().filter(team__id = idOfTeam):
         pass
     else:
         Team.objects.get(id = idOfTeam).delete()
         return HttpResponseRedirect(reverse('classpage', args=[str(course.in_class.id)]))
-    
+
     return HttpResponseRedirect(reverse('teampage', args=[str(idOfTeam)]))
 
 @login_required
@@ -150,7 +152,7 @@ def kickMember(request, idOfTeam, usr):
                 instance.delete()
             except Exception:
                 pass
-    
+
     return HttpResponseRedirect(reverse('teampage', args=[str(idOfTeam)]))
 
 @login_required
@@ -164,7 +166,7 @@ def teampageEdit(request, idOfTeam):
             team.team_info = form.cleaned_data['team_info']
             team.max_teammates = form.cleaned_data['max_teammates']
             team.save()
-            
+
             return HttpResponseRedirect(reverse('teampage',args=[str(team.id)]))
     else:
         teamName = team.name
@@ -193,7 +195,7 @@ def profileEdit(request):
             student.middle_name = studform.cleaned_data['middle_name']
             student.account.save()
             student.save()
-            
+
             return HttpResponseRedirect(reverse('myprofilepage'))
     else:
         firstname = loggedInUser.first_name
@@ -220,14 +222,14 @@ def changePassword(request):
             update_session_auth_hash(request, user)
 
             return HttpResponseRedirect(reverse('myprofilepage'))
-    
+
     else:
         form = PasswordChangeFormCSS(request.user)
-    
+
     context = {
         'form' : form,
     }
-    
+
     return render(request, 'changepassword.html', context)
 
 @login_required
