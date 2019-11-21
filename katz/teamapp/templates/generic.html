@@ -32,8 +32,11 @@
                     <li class="nav-item">
                       <a class="nav-link" href="{% url 'myprofilepage' %}">My Profile</a>
                     </li>
-                    <form class="form-inline my-2 my-lg-0">
-                        <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+                    <li class="nav-item">
+                      <a class="nav-link" href="{% url 'classes' %}">All Classes</a>
+                    </li>
+                    <form class="form-inline my-3 my-lg-0">
+                        <input class="form-control m-3 mr-sm-2" type="search" placeholder="Search" aria-label="Search">
                         <button class="btn btn-info" type="submit">Search</button>
                     </form>
                   </ul>        <a href="{% url 'logout' %}" class="btn btn-info pull-right" style="float: right;"role="button">Logout</a>

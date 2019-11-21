@@ -13,5 +13,8 @@ urlpatterns = [
     path('team/<int:idOfTeam>/kick/<str:usr>/', views.kickMember, name='kickmember'),
     path('team/<int:idOfTeam>/edit', views.teampageEdit, name='teampageEdit'),
     path('user/myprofilepage/edit', views.profileEdit, name='profileEdit'),
-    path('user/myprofilepage/changepassword', views.changePassword, name='changepassword')
+    path('user/myprofilepage/changepassword', views.changePassword, name='changepassword'),
+    path('classes', views.schoolClasses, name='classes'),
+    path('class/<int:idOfClass>/join/', views.joinClass, name='joinClass'),
+    path('class/<int:idOfClass>/leave/', views.leaveClass, name='leaveClass'),
 ]
