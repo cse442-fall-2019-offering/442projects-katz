@@ -19,19 +19,6 @@
                 <button type="submit" class="btn btn-primary">Leave Group</button>
                 <hr>
             </form>
-            {% else %}
-            <form action="join/" method = "post">
-                {% csrf_token %}
-                <hr>
-                <button type="submit" class="btn btn-primary">Join Team</button>
-                <hr>
-            </form>
-            {% endif %}
-        </div>
-        <div class="col-sm-7">
-            <h1><center>{{team.name}}</center></h1>
-            <!--project description-->
-            <p>{{team.team_info}}</p>
             {% if team.team_leader.account == user %}
             
             <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModal">Edit Team</button>
@@ -68,6 +55,20 @@
 
 
             {% endif %}
+            {% else %}
+            <form action="join/" method = "post">
+                {% csrf_token %}
+                <hr>
+                <button type="submit" class="btn btn-primary">Join Team</button>
+                <hr>
+            </form>
+            {% endif %}
+        </div>
+        <div class="col-sm-7">
+            <h1><center>{{team.name}}</center></h1>
+            <!--project description-->
+            <p>{{team.team_info}}</p>
+            
                 <h4 class="border-bottom border-dark p-1">Roster</h4>
                 <!--People in Team-->
                 <div class="card-group">
