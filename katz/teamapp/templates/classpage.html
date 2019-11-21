@@ -37,6 +37,36 @@
                         {% csrf_token %}
                         <button type="submit" class="btn btn-primary">Leave</button>
                     </form>
+                    <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModal">Create A Team</button>
+                    <div id="myModal" class="modal fade" role="dialog">
+                        <div class="modal-dialog">
+                      
+                          <!-- Modal content-->
+                          <div class="modal-content">
+                            <div class="modal-header">
+                              <button type="button" class="close" data-dismiss="modal">&times;</button>
+                              <h4 class="modal-title">Create a team</h4>
+                            </div>
+                            
+                                <div class="container">
+                                        <div class="col-auto">
+                                        <form action="" method='post'>
+                                            {% csrf_token %}
+                                            {{ form.as_table }}
+                                            <hr>
+                                            <p class='m3'><button type="submit" class="btn btn-primary">Create</button></p>
+                                            <hr>
+                                        </form>
+                                        </div>
+                                </div>
+                            </div>
+                            <div class="modal-footer">
+                              <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
+                            </div>
+                          </div>
+                      
+                        </div>
+                      </div>
                     {% else %}
                     <form action="{% url 'joinClass' classOfId.id %}" method='post'>
                         {% csrf_token %}
@@ -63,9 +93,6 @@
             </li>
             <li class="nav-item">
                 <a class="nav-link" data-toggle="tab" href="#People">People</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link active" data-toggle="tab" href="#Create_Team">Create Team</a>
             </li>
         </ul>
     </div>
@@ -132,18 +159,6 @@
             </div>
         </div>
         <!--Create a Team tab-->
-        <div id="Create_Team" class="container tab-pane active">
-            <div class="container">
-                    <div class="col-auto">
-                    <form action="" method='post'>
-                        {% csrf_token %}
-                        {{ form.as_table }}
-                        <hr>
-                        <p class='m3'><button type="submit" class="btn btn-primary">Create</button></p>
-                        <hr>
-                    </form>
-                    </div>
-            </div>
-        </div>
+        
     </div>
 {% endblock %}
