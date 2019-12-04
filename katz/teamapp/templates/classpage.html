@@ -13,8 +13,8 @@
             </div>
         </div>
     </div>
-    
-    
+
+
     <!--
     Holds Class image on left with contact info below
     Also has a paragraph about the page.
@@ -31,12 +31,43 @@
                 <p>Website: wgrfhiubrgfhiub.com</p>
                 <p>Times: {{ classOfId.start_time }} - {{ classOfId.end_time }} </p>
                 <p>Contact: 716 243 3784</p>
-                <p> 
+                <p>
                     {% if joined %}
                     <form action="{% url 'leaveClass' classOfId.id %}" method='post'>
                         {% csrf_token %}
                         <button type="submit" class="btn btn-primary">Leave</button>
                     </form>
+                    <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModal">Create A Team</button>
+                    <div id="myModal" class="modal fade" role="dialog">
+                        <div class="modal-dialog">
+
+                          <!-- Modal content-->
+                          <div class="modal-content">
+                            <div class="modal-header">
+                                <h4 class="modal-title">Create a team</h4>
+                              <button type="button" class="close" data-dismiss="modal">&times;</button>
+
+                            </div>
+
+                                <div class="container">
+                                        <div class="col-auto">
+                                        <form action="" method='post'>
+                                            {% csrf_token %}
+                                            {{ form.as_table }}
+                                            <hr>
+                                            <p class='m3'><button type="submit" class="btn btn-primary">Create</button></p>
+                                            <hr>
+                                        </form>
+                                        </div>
+                                </div>
+
+                            <div class="modal-footer">
+                              <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
+                            </div>
+                          </div>
+                        </div>
+                        </div>
+                      </div>
                     {% else %}
                     <form action="{% url 'joinClass' classOfId.id %}" method='post'>
                         {% csrf_token %}
@@ -51,7 +82,7 @@
         </div>
     </div>
     <hr>
-    
+
     <!--
     Tab bar containg 4 pages to swap between with below the CLass info
     -Team view/Available Teams/Available People/Create a Team
@@ -64,13 +95,10 @@
             <li class="nav-item">
                 <a class="nav-link" data-toggle="tab" href="#People">People</a>
             </li>
-            <li class="nav-item">
-                <a class="nav-link active" data-toggle="tab" href="#Create_Team">Create Team</a>
-            </li>
         </ul>
     </div>
-    
-    
+
+
     <!--The 4 Tabs are here-->
     <div class="tab-content">
         <!--Available Teams tab-->
@@ -132,18 +160,6 @@
             </div>
         </div>
         <!--Create a Team tab-->
-        <div id="Create_Team" class="container tab-pane active">
-            <div class="container">
-                    <div class="col-auto">
-                    <form action="" method='post'>
-                        {% csrf_token %}
-                        {{ form.as_table }}
-                        <hr>
-                        <p class='m3'><button type="submit" class="btn btn-primary">Create</button></p>
-                        <hr>
-                    </form>
-                    </div>
-            </div>
-        </div>
+
     </div>
 {% endblock %}
