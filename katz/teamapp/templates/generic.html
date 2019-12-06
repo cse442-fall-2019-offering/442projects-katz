@@ -17,25 +17,32 @@
     <title>{% block title %}{% endblock %}</title>
 
     <!--Personal style sheet, only contains profile pic size for now.-->
-    <link rel="stylesheet" href="style.css">
+    {% load static %}
+    <link rel="stylesheet" href={% static "style.css" %}>
   </head>
-  <body class="bg-light"> 
+  <body class="bg-light">
     <!--Navigation Bar-->
     <nav class="navbar navbar-expand-md navbar-dark bg-dark sticky-top"  style="min-height: 54px; min-width:200px;">
             <div class="container-fluid"style="min-height: 54px;" >
+                <!-- Homepage button -->
               <a class="navbar-brand" href="{% url 'homepage' %}">K A T Z</a>
               <button class="navbar-toggler float-right" type="button" data-toggle="collapse" data-target="#navbarResponsive">
                 <span class="navbar-toggler-icon"></span>
-              </button>    <div class="collapse navbar-collapse" id="navbarResponsive">        <ul class="navbar-nav ml-auto mx-auto d-flex align-items-center">
-                    
+              </button>
+                <div class="collapse navbar-collapse" id="navbarResponsive">
+                    <ul class="navbar-nav ml-auto mx-auto d-flex align-items-center">
+                    <!-- My Profile Button -->
                     <li class="nav-item">
                       <a class="nav-link" href="{% url 'myprofilepage' %}">My Profile</a>
                     </li>
                     <form class="form-inline my-2 my-lg-0">
+                        <!-- Search field/button -->
                         <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
                         <button class="btn btn-info" type="submit">Search</button>
                     </form>
-                  </ul>        <a href="{% url 'logout' %}" class="btn btn-info pull-right" style="float: right;"role="button">Logout</a>
+                  </ul>
+                  <!-- Logout Button -->
+                  <a href="{% url 'logout' %}" class="btn btn-info pull-right" style="float: right;"role="button">Logout</a>
               </div>
     </nav>
     {% block body %}

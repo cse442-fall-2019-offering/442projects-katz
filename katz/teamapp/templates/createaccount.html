@@ -2,14 +2,18 @@
 <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 
+<!-- Loads the static files -->
 {% load static %}
 <link rel="stylesheet" type="text/css" href="{% static 'mystyles.css' %}" media="screen" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <div class="login">
+    <!-- Login Title -->
     <h1>Login</h1>
+    <!-- If password and username didnt match brings up this messages -->
     {% if form.errors %}
     <p class="p-3 mb-2 bg-danger text-white">Your username and password didn't match. Please try again.</p>
     {% endif %}
+    <!-- Authentication error message -->
     {% if next %}
     {% if user.is_authenticated %}
         <p class="p-3 mb-2 bg-danger text-white">Your account doesn't have access to this page. To proceed,
@@ -17,6 +21,7 @@
     {% endif %}
     {% endif %}
     <form method="post">
+        <!-- Create Account form -->
         {% csrf_token %}
         {{ form }}
         <input type="submit" value="Create Account" />
