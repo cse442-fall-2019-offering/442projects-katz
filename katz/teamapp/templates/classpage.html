@@ -106,6 +106,7 @@
             <div class="row">
                 <div class="col-sm-4">
                 </div>
+                <!--Header for Available Teams tab-->
                 <div class="col-sm-3">
                     <h3><center>Available Teams</center></h3>
                 </div>
@@ -114,10 +115,11 @@
                 <hr>
                 <!--Cards of the avalable teams-->
                 <div class="card-columns">
+                    <!--Loops between all teams at a given class to displaying there info-->
                     {% if teams %}
                     {% for team in teams %}
                     <div class="card">
-                        <img src="{% static 'download.jpg' %}" class="card-img-top" alt="Team Picture">
+                        <img src="{{team.team_image.url}}" class="card-img-top" alt="Team Picture">
                         <div class="card-body">
                             <h5 class="card-title">{{ team.name }}</h5>
                             <p class="card-text">{{ team.team_info }}</p>
@@ -135,6 +137,7 @@
                 <br>
                 <div class="col-sm-4">
                 </div>
+                <!--Header for Available People tab-->
                 <div class="col-sm-3">
                     <br>
                     <h3><center>Available People</center></h3>
@@ -142,7 +145,7 @@
                 <div class="col-sm-3">
                 </div>
                 <hr>
-                <!--Cards of the avalable People-->
+                <!--Loops between all people at a given class displaying there info-->
                 <div class="card-columns">
                     {% if students %}
                     {% for enrolledin in students %}
@@ -160,6 +163,5 @@
             </div>
         </div>
         <!--Create a Team tab-->
-
     </div>
 {% endblock %}

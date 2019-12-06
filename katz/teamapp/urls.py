@@ -1,6 +1,7 @@
 from django.urls import path
 from . import views
 
+#Url paths for every page in teamapp
 urlpatterns = [
     path('', views.homepage, name='homepage'),
     path('class/<int:idOfClass>/', views.classpage, name='classpage'),

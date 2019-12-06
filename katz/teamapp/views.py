@@ -7,8 +7,8 @@ from teamapp.forms import createTeam, UserForm, StudentForm , PasswordChangeForm
 from django.contrib.auth import update_session_auth_hash
 
 
-# Create your views here.
 
+# Returns the homepage for the specific logged in user
 @login_required
 def homepage(request):
 
@@ -23,6 +23,9 @@ def homepage(request):
 
     return render(request, 'homepage.html', context=context)
 
+from teamapp.forms import createTeam
+
+# Returns the classpage for a specific class that was requested
 @login_required
 def classpage(request, idOfClass):
     students = EnrolledIn.objects.all().filter(in_class__id = idOfClass)
@@ -63,6 +66,7 @@ def classpage(request, idOfClass):
 
     return render(request, 'classpage.html', context=context)
 
+# Returns the teampage for a specific team that was requested
 @login_required
 def teampage(request, idOfTeam):
     team = Team.objects.get(id=idOfTeam)
@@ -94,6 +98,7 @@ def teampage(request, idOfTeam):
 
     return render(request, 'teampage.html', context=context)
 
+# Returns the user profile for a specific user that was requested
 @login_required
 def profilepage(request, usrname):
 
@@ -106,6 +111,7 @@ def profilepage(request, usrname):
     }
     return render(request, 'profilepage.html', context=context)
 
+# Adds student to a specific team when its called
 @login_required
 def jointeam(request, idOfTeam):
     s = Student.objects.get(account = request.user)
@@ -120,6 +126,7 @@ def jointeam(request, idOfTeam):
 
     return HttpResponseRedirect(reverse('teampage', args=[str(idOfTeam)]))
 
+# Leaves a team when this fuction is called
 @login_required
 def leaveteam(request, idOfTeam):
     t = Teams.objects.all().filter(team__id = idOfTeam)
@@ -140,21 +147,24 @@ def leaveteam(request, idOfTeam):
 
     return HttpResponseRedirect(reverse('teampage', args=[str(idOfTeam)]))
 
+# Displays the logged in user profile page
 @login_required
 def myprofilepage(request):
     return HttpResponseRedirect(reverse('profilepage', args=[str(request.user.username)]))
 
 from teamapp.forms import createAccountForm
 from django.contrib.auth.forms import UserCreationForm
+
+# Displays the create account pages
 def createAccount(request):
     form = UserCreationForm()
     context = {
         'form' : form,
     }
 
-    #return render(request, 'profilepage.html', context=context)
     return render(request, 'createaccount.html', context=context)
 
+# kicks a member if user is team leader, when given a team id, and username
 @login_required
 def kickMember(request, idOfTeam, usr):
     t = Teams.objects.all().filter(team__id = idOfTeam)
@@ -171,16 +181,18 @@ def kickMember(request, idOfTeam, usr):
 
     return HttpResponseRedirect(reverse('teampage', args=[str(idOfTeam)]))
 
+# Displays the edit team page when called with a team id
 @login_required
 def teampageEdit(request, idOfTeam):
     team = Team.objects.get(id = idOfTeam)
 
     if request.method == 'POST':
-        form = createTeam(request.POST)
+        form = createTeam(request.POST, request.FILES)
         if form.is_valid():
             team.name = form.cleaned_data['name']
             team.team_info = form.cleaned_data['team_info']
             team.max_teammates = form.cleaned_data['max_teammates']
+            team.team_image = form.cleaned_data['team_image']
             team.save()
 
             return HttpResponseRedirect(reverse('teampage',args=[str(team.id)]))
@@ -188,7 +200,8 @@ def teampageEdit(request, idOfTeam):
         teamName = team.name
         descrip = team.team_info
         maxteam = team.max_teammates
-        form = createTeam(initial={'name': teamName, 'team_info':descrip, 'max_teammates':maxteam})
+        teamimage = team.team_image
+        form = createTeam(initial={'name': teamName, 'team_info':descrip, 'max_teammates':maxteam, 'team_image':teamimage})
 
     context = {
         'form' : form,

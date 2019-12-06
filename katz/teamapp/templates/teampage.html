@@ -1,4 +1,6 @@
+<!--Loads the template-->
 {% extends 'generic.html' %}
+<!--Names the block title-->
 {% block title %}Team Page{% endblock %}
 
 {% block body %}
@@ -9,9 +11,11 @@
             <br>
             <br>
             <br>
+            <!--Displays the team image-->
             <div class="card">
-                <img src="{% static 'download.jpg' %}" class="card-img-top" alt="Team Picture">
+                <img src="{{team.team_image.url}}" class="card-img-top" alt="download.jpg">
             </div>
+            <!--Displays button to leave team if currently in team-->
             {% if userteam %}
             <form action='leave/' method = "post">
                 {% csrf_token %}
@@ -65,28 +69,31 @@
             {% endif %}
         </div>
         <div class="col-sm-7">
+            <!--Team Name-->
             <h1><center>{{team.name}}</center></h1>
             <!--project description-->
             <p>{{team.team_info}}</p>
             
                 <h4 class="border-bottom border-dark p-1">Roster</h4>
-                <!--People in Team-->
+                <!--People in Team displayed as cards-->
                 <div class="card-group">
                     {% if teamMems %}
                     {% for mem in teamMems%}
                     <div class="card">
-                        <img src="{% static 'download.jpg' %}" class="card-img-top" alt="Profile Picture">
+                        <img src="{{mem.student.student_image.url}}" class="card-img-top" alt="Profile Picture">
                         <div class="card-body">
-                            <h5 class="card-title"> 
+                            <!--Displays the team member informartion-->
+                            <h5 class="card-title">
                                 {% if team.team_leader.account == mem.student.account %}
                                     <strong>Leader: </strong>
                                 {% endif %}
-                                {{mem.student.account.first_name}} 
-                                {{mem.student.middle_name}} 
+                                {{mem.student.account.first_name}}
+                                {{mem.student.middle_name}}
                                 {{mem.student.account.last_name}}
                             </h5>
                             <p class="card-text"></p>
                             <a href="{{mem.student.get_absolute_url}}" class="btn btn-primary">See Profile</a>
+                            <!--Displays kick ability if you are the team leader-->
                             {% if team.team_leader.account == user %}
                             {% if mem.student.account != user %}
                                 <a href="/teamapp/team/{{team.id}}/kick/{{mem.student.account.username}}/" class="btn btn-primary">Kick</a>

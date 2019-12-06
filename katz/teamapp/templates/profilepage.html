@@ -1,4 +1,6 @@
+<!--Loads the template-->
 {% extends 'generic.html' %}
+<!--Names the block title-->
 {% block title %}Team Page{% endblock %}
 
 {% block body %}
@@ -9,6 +11,7 @@
   <div class="jumbotron bg-light jumbotron-fluid mx-auto" style="min-width: 400px;">
     <div class="container-fluid d-flex justify-content-center flex-wrap">
       <ul>
+          <!--Loads the students profile picture-->
           <img src="{% static 'stock-student-photo.jpg' %}" alt="Profile Picture" class="img-fluid img-thumbnail profile-pic mx-auto">
           <div class="align-self-baseline mx-auto">
             <div class="container-fluid d-flex flex-column">
@@ -21,6 +24,7 @@
               {% endif %}
       </ul>
       <ul>
+          <!--Current School Displays-->
           <h2 class="border-bottom border-dark p-1">School</h2>
             {% if student.school %}
             <div class="card">
@@ -39,13 +43,14 @@
             {% endif %}
         </ul>
         <ul>
+          <!--Displays the teams the student is part of-->
           <h2 class="border-bottom border-dark p-1">Teams</h2>
           {% if teams %}
           {% for team in teams %}
               <div class="card" style="background-color: #f7f7f7">
                 <div class="card-header  justify-content-center mx-auto" style="background-color: #f7f7f7"id="TeamOne">
                   <h2 class="mb-0 ">
-                    
+
                       <div class="container-fluid d-flex flex-row flex-wrap">
                         <div class="card mx-auto">
                           <div class="card-body  text-center">
@@ -56,18 +61,15 @@
                           </div>
                         </div>
                       </div>
-                   
+
                   </h2>
                 </div>
               </div>
             {% endfor %}
             {% endif %}
       </ul>
-        </div>
-      </div>
     </div>
-  </div>
-
+</div>
 </body>
 
 {% endblock %}
