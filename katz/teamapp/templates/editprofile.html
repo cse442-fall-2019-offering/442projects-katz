@@ -2,7 +2,7 @@
 {% block title %}Edit Profile{% endblock %}
 {% block body %}
 <div class="form-group m-5">
-    <form class='p3' action="" method='post'>
+    <form class='p3' action="" method='post' enctype="multipart/form-data">
         <div class="col-auto">
             {% csrf_token %}
             {{ userform.as_table }}

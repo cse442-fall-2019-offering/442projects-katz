@@ -80,7 +80,6 @@ def teampage(request, idOfTeam):
             team.team_info = form.cleaned_data['team_info']
             team.max_teammates = form.cleaned_data['max_teammates']
             team.save()
-            
             return HttpResponseRedirect(reverse('teampage',args=[str(team.id)]))
     else:
         teamName = team.name
@@ -210,6 +209,7 @@ def teampageEdit(request, idOfTeam):
 
     return render(request, 'editteam.html', context=context)
 
+#takes student and user and out puts the profile edit page
 @login_required
 def profileEdit(request):
     loggedInUser = request.user
@@ -217,11 +217,12 @@ def profileEdit(request):
 
     if request.method == 'POST':
         userform = UserForm(request.POST)
-        studform = StudentForm(request.POST)
+        studform = StudentForm(request.POST, request.FILES)
         if userform.is_valid() and studform.is_valid():
             student.account.first_name = userform.cleaned_data['first_name']
             student.account.last_name = userform.cleaned_data['last_name']
             student.middle_name = studform.cleaned_data['middle_name']
+            student.student_image = studform.cleaned_data['student_image']
             student.account.save()
             student.save()
 
@@ -230,9 +231,10 @@ def profileEdit(request):
         firstname = loggedInUser.first_name
         lastname = loggedInUser.last_name
         middlename = student.middle_name
+        studentimage = student.student_image
 
         userform = UserForm(initial={'first_name': firstname, 'last_name':lastname})
-        studform = StudentForm(initial={'middle_name': middlename})
+        studform = StudentForm(initial={'middle_name': middlename, 'student_image':studentimage})
 
     context = {
         'userform' : userform,

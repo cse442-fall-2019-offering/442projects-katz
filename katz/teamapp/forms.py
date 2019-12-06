@@ -28,6 +28,7 @@ class createTeam(ModelForm):
 
 from teamapp.models import Student
 from django.contrib.auth.models import User
+#create account form which produces the create accunt form
 class createAccountForm(ModelForm):
 
     class Meta:
@@ -44,6 +45,7 @@ class UserForm(ModelForm):
         model = User
         fields = ['first_name', 'last_name',]
 
+#student form the produces the fields named for forms.
 class StudentForm(ModelForm):
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
@@ -51,9 +53,10 @@ class StudentForm(ModelForm):
 
     class Meta:
         model = Student
-        fields = ['middle_name']
+        fields = ['middle_name', 'student_image']
 
 from django.forms.utils import ErrorList
+#produces an error form when error occurs
 class CustomErrorList(ErrorList):
     def __str__(self):
         return self.as_divs()
@@ -62,12 +65,12 @@ class CustomErrorList(ErrorList):
         return '<div class="alert alert-danger">%s</div>' % ''.join(['<div class="error">%s</div>' % e for e in self])
 
 from django.contrib.auth.forms import PasswordChangeForm
+#checks if password is authenticated
 class PasswordChangeFormCSS(PasswordChangeForm):
-    
+
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
         self.fields['new_password2'].widget.attrs.update({'class': 'form-control '})
         self.fields['new_password1'].widget.attrs.update({'class': 'form-control '})
         self.fields['old_password'].widget.attrs.update({'class': 'form-control '})
         self.error_class = CustomErrorList
-
