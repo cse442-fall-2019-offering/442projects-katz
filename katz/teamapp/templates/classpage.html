@@ -13,8 +13,8 @@
             </div>
         </div>
     </div>
-    
-    
+
+
     <!--
     Holds Class image on left with contact info below
     Also has a paragraph about the page.
@@ -31,6 +31,50 @@
                 <p>Website: wgrfhiubrgfhiub.com</p>
                 <p>Times: {{ classOfId.start_time }} - {{ classOfId.end_time }} </p>
                 <p>Contact: 716 243 3784</p>
+                <p>
+                    {% if joined %}
+                    <form action="{% url 'leaveClass' classOfId.id %}" method='post'>
+                        {% csrf_token %}
+                        <button type="submit" class="btn btn-primary">Leave</button>
+                    </form>
+                    <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModal">Create A Team</button>
+                    <div id="myModal" class="modal fade" role="dialog">
+                        <div class="modal-dialog">
+
+                          <!-- Modal content-->
+                          <div class="modal-content">
+                            <div class="modal-header">
+                                <h4 class="modal-title">Create a team</h4>
+                              <button type="button" class="close" data-dismiss="modal">&times;</button>
+
+                            </div>
+
+                                <div class="container">
+                                        <div class="col-auto">
+                                        <form action="" method='post'>
+                                            {% csrf_token %}
+                                            {{ form.as_table }}
+                                            <hr>
+                                            <p class='m3'><button type="submit" class="btn btn-primary">Create</button></p>
+                                            <hr>
+                                        </form>
+                                        </div>
+                                </div>
+
+                            <div class="modal-footer">
+                              <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
+                            </div>
+                          </div>
+                        </div>
+                        </div>
+                      </div>
+                    {% else %}
+                    <form action="{% url 'joinClass' classOfId.id %}" method='post'>
+                        {% csrf_token %}
+                        <button type="submit" class="btn btn-primary">Join</button>
+                    </form>
+                    {% endif %}
+                </p>
             </div>
             <div class="col-sm-9">
                 <p>{{classOfId.class_info}}</p>
@@ -38,7 +82,7 @@
         </div>
     </div>
     <hr>
-    
+
     <!--
     Tab bar containg 4 pages to swap between with below the CLass info
     -Team view/Available Teams/Available People/Create a Team
@@ -51,13 +95,10 @@
             <li class="nav-item">
                 <a class="nav-link" data-toggle="tab" href="#People">People</a>
             </li>
-            <li class="nav-item">
-                <a class="nav-link active" data-toggle="tab" href="#Create_Team">Create Team</a>
-            </li>
         </ul>
     </div>
-    
-    
+
+
     <!--The 4 Tabs are here-->
     <div class="tab-content">
         <!--Available Teams tab-->
@@ -65,6 +106,7 @@
             <div class="row">
                 <div class="col-sm-4">
                 </div>
+                <!--Header for Available Teams tab-->
                 <div class="col-sm-3">
                     <h3><center>Available Teams</center></h3>
                 </div>
@@ -73,10 +115,11 @@
                 <hr>
                 <!--Cards of the avalable teams-->
                 <div class="card-columns">
+                    <!--Loops between all teams at a given class to displaying there info-->
                     {% if teams %}
                     {% for team in teams %}
                     <div class="card">
-                        <img src="{% static 'download.jpg' %}" class="card-img-top" alt="Team Picture">
+                        <img src="{{team.team_image.url}}" class="card-img-top" alt="Team Picture">
                         <div class="card-body">
                             <h5 class="card-title">{{ team.name }}</h5>
                             <p class="card-text">{{ team.team_info }}</p>
@@ -94,6 +137,7 @@
                 <br>
                 <div class="col-sm-4">
                 </div>
+                <!--Header for Available People tab-->
                 <div class="col-sm-3">
                     <br>
                     <h3><center>Available People</center></h3>
@@ -101,7 +145,7 @@
                 <div class="col-sm-3">
                 </div>
                 <hr>
-                <!--Cards of the avalable People-->
+                <!--Loops between all people at a given class displaying there info-->
                 <div class="card-columns">
                     {% if students %}
                     {% for enrolledin in students %}
@@ -119,24 +163,5 @@
             </div>
         </div>
         <!--Create a Team tab-->
-        <div id="Create_Team" class="container tab-pane active">
-            <div class="container">
-                <div class="row">
-                    <div class="col-sm-4">
-                    </div>
-                    <div class="col-sm-3">
-                    <form action="" method='post'>
-                        {% csrf_token %}
-                        {{ form.as_table }}
-                        <hr>
-                        <p class='m3'><button type="submit" class="btn btn-primary">Create</button></p>
-                        <hr>
-                    </form>
-                    </div>
-                    <div class="col-sm-4">
-                    </div>
-                </div>
-            </div>
-        </div>
     </div>
 {% endblock %}

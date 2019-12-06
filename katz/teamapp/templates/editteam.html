@@ -1,0 +1,19 @@
+<!-- Loads Generic file with base code -->
+{% extends 'generic.html' %}
+<!-- Names this block the edit team page -->
+{% block title %}Edit Team Page{% endblock %}
+{% block body %}
+<!-- Load the form for edit team -->
+<form class='p3' action="" method='post' enctype="multipart/form-data">
+    <div class="col-auto">
+        <!-- Loads the edit team form into the page -->
+        {% csrf_token %}
+        {{ form.as_table }}
+        <hr>
+            <!-- Confirm/Cancel edit buttons -->
+            <p class='m3'><button type="submit" class="btn btn-primary">Confirm Edit</button></p>
+            <a href="{% url 'teampage' team.id %}" class="btn btn-primary">Cancel</a>
+        <hr>
+    </div>
+</form>
+{% endblock %}

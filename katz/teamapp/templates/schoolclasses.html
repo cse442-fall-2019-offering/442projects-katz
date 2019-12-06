@@ -1,0 +1,20 @@
+{% extends 'generic.html' %}
+{% block title %}All Classes{% endblock %}
+
+{% block body %}
+    <!--Courses listed as cards-->
+    <div class="m-3 container-fluid d-flex justify-content-center flex-row flex-wrap">
+    {% if classes %}
+        {% for enrolledin in classes %}
+        <div class="card m-1" style="width: 18rem;">
+            <a href="{{ enrolledin.get_absolute_url }}">
+                <div class="card-body">
+                    <h5 class="card-title">{{ enrolledin.name }}</h5>
+                    <h6 class="card-subtitle mb-2 text-muted">{{ enrolledin.class_info }}</h6>
+                </div>
+            </a>
+        </div>
+        {% endfor %}
+    {% endif %}
+    </div>
+{% endblock %}
