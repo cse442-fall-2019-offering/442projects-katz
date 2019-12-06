@@ -12,10 +12,12 @@
     <div class="container-fluid d-flex justify-content-center flex-wrap">
       <ul>
           <!--Loads the students profile picture-->
-          <img src="{% static 'stock-student-photo.jpg' %}" alt="Profile Picture" class="img-fluid img-thumbnail profile-pic mx-auto">
+          <div class="col-sm-7">
+          <img src="{{student.student_image.url}}" class="card-img-top" alt="download.jpg">
+          </div>
           <div class="align-self-baseline mx-auto">
             <div class="container-fluid d-flex flex-column">
-              <h1 class="text-center"><span class="badge badge-dark"> {{student.account.first_name}} {{student.middle_name}} {{student.account.last_name}}</span></h1>
+              <h1><span class="badge badge-dark"> {{student.account.first_name}} {{student.middle_name}} {{student.account.last_name}}</span></h1>
               {% if student.account == request.user %}
               <div class="col-auto">
                 <p class='m3'><a href="{% url 'profileEdit' %}" class="btn btn-primary">Edit Personal Info</a></p>
@@ -55,7 +57,6 @@
                         <div class="card mx-auto">
                           <div class="card-body  text-center">
                             <h3 class="card-title">{{team.team.name}}</h3>
-                            <h6 class="card-subtitle mb-2 text-muted">{{team.team.team_info}}</h6>
                             <h6 class="card-subtitle mb-2 " style="color: black;"><u>Class</u>: {{team.team.in_class.name}}</h6>
                               <a href="{{team.team.get_absolute_url}}" class=btn-link style="font-size: 24px">Details</a>
                           </div>
