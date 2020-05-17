@@ -1,6 +1,10 @@
 <h1>KATZ</h1>
 
-**Name & UB email address of each team member:** Vladimir Tattybayev Vtattyba@buffalo.edu Colin Ackerman cdackerm@buffalo.edu ; Github: cackerman55@gmail.com Gustavo Zanella gdzanell@buffalo.edu Igor Kuzmich igorkuzm@buffalo.edu
+**Name & UB email address of each team member:** 
+1. Vladimir Tattybayev Vtattyba@buffalo.edu 
+2. Colin Ackerman cdackerm@buffalo.edu 
+3. Gustavo Zanella gdzanell@buffalo.edu 
+4. Igor Kuzmich igorkuzm@buffalo.edu
 
 **Demo URL:** https://www.youtube.com/watch?v=HKh19c6J61o
 
